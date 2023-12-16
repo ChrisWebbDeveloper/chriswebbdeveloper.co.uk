@@ -6,6 +6,13 @@
     align-items: center;
     justify-content: center;
 
+    $filteredBlack: rgba($siteBlack, 0.85);
+    
+    background: linear-gradient($filteredBlack, $filteredBlack), url("../../assets/home-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
     h1.display-1 {
         font-size: 6em;
     }
