@@ -2,7 +2,9 @@
 
 .component {
     height: 100vh;
-    padding-top: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     h1.display-1 {
         font-size: 6em;
