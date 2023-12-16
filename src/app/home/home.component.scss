@@ -3,5 +3,9 @@
 .component {
     height: 100vh;
     // TODO REMOVE THIS
-    background: goldenrod;
+    padding-top: 30vh;
+
+    h1.display-1 {
+        font-size: 6em;
+    }
 }
