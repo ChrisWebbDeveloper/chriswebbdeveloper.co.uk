@@ -1,0 +1,16 @@
+// Colors
+$siteWhite: #fdfdfd;
+$siteBlack: #030816;
+$siteBlue: #61c7e0;
+$siteDarkBlue: #10698f;
+
+$navbar-height: 55px;
+
+$theme-colors: (
+    "primary": $siteBlue,
+    "secondary": $siteDarkBlue,
+    "light": $siteWhite,
+    "dark": $siteBlack
+);
+
+$enable-rounded: false;
