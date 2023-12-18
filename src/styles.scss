@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "styling/variables";
+@import "styling/fonts/Lato.scss";
+@import "styling/fonts/Raleway.scss";
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
 
@@ -8,7 +10,8 @@ body {
     background-color: $siteWhite;
 
     .component-padding {
-        padding-top: 80px;
+        padding-top: $component-y-padding;
+        padding-bottom: $component-y-padding;
     }
 
     h1, h2, h3, h4, h5, h6, .navbar-brand {
