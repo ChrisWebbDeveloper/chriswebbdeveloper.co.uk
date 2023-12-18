@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
 import { Skill } from '../models/skill';
-import { NgFor } from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-skills',
   standalone: true,
   imports: [
-    NgFor
+    CommonModule
   ],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss'
 })
 export class SkillsComponent {
-  skills : Skill[] = [];
+  skills?: Skill[];
 
   ngOnInit() {
     this.skills = [
