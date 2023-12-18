@@ -1,4 +1,10 @@
-.component {
+@import "../../variables";
+
+:host {
+    display: flex;
+    background: $siteBlack;
+    color: $siteWhite;
+    
     // TODO REMOVE THIS
     height: 600px;
 }
