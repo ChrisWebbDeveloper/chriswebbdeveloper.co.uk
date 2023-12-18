@@ -12,10 +12,11 @@ $theme-colors: (
 );
 
 $display-font-sizes: (
-  1: 6rem
+  1: 6rem,
+  5: 1.5rem
 );
 
 $enable-rounded: false;
 $font-family-base: "Lato", sans-serif;
 
-$component-y-padding: 80px;
+$component-y-padding: 90px;
