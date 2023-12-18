@@ -1,10 +1,5 @@
-@import "../../styling/variables";
-
 :host {
     display: flex;
-    background: $siteBlack;
-    color: $siteWhite;
-    
     // TODO REMOVE THIS
     height: 600px;
 }
