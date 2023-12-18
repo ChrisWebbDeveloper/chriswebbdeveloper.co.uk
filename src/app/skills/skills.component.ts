@@ -5,8 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './skills.component.html',
-  styleUrl: './skills.component.scss',
-  host: {'class': 'bg-secondary text-white'}
+  styleUrl: './skills.component.scss'
 })
 export class SkillsComponent {
 
