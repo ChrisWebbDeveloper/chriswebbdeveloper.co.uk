@@ -1,5 +1,11 @@
 {
-    "home_details": {},
+    "home_details": {
+        "title": [
+            { "text": "Hi, I'm\n" },
+            { "text": "Chris Webb", "color": "primary"}
+        ],
+        "subtitle" : "I am a full-stack developer of software and web applications"
+    },
     "about_details": {},
     "projects_details": {},
     "contact_details": {}

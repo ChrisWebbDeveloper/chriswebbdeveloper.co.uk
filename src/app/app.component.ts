@@ -25,7 +25,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  dataUrl = "../assets/data/data.json"
+  dataUrl = "../assets/data/data.json";
   content?: {};
   
   constructor(private http: HttpClient) {
