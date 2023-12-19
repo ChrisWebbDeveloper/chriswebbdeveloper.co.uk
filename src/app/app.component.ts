@@ -7,6 +7,7 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Content } from './models/content';
 
 @Component({
   selector: 'app-root',
@@ -26,7 +27,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 })
 export class AppComponent {
   dataUrl = "../assets/data/data.json";
-  content?: {};
+  content?: Content;
   
   constructor(private http: HttpClient) {
   }
