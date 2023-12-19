@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { SkillsComponent } from '../skills/skills.component';
-import { AboutDetails } from '../models/about-details';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -14,7 +13,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './about-me.component.scss'
 })
 export class AboutMeComponent {
-  details?: AboutDetails;
+  details?: { title: string, text: string };
   text?: string[];
 
   ngOnInit() {

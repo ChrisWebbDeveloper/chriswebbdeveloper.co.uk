@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Skill } from '../models/skill';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -12,7 +11,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './skills.component.scss'
 })
 export class SkillsComponent {
-  skills?: Skill[];
+  skills?: { name:string, exp:number }[];
 
   ngOnInit() {
     this.skills = [
