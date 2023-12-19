@@ -8,5 +8,13 @@
     },
     "about_details": {},
     "projects_details": {},
-    "contact_details": {}
+    "contact_details": {
+        "title": "",
+        "text": "Want to get in touch? I am available on at the links below:",
+        "contacts": {
+            "email": "webb.christopher@live.co.uk",
+            "linkedIn": "webb-christopher",
+            "gitHub": "ChrisWebbDeveloper"
+        }
+    }
 }
