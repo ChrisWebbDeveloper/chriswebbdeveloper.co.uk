@@ -33,7 +33,106 @@
             { "name": "NoSQL (MongoDB)", "exp": 50 }
         ]
     },
-    "projects_details": {},
+    "projects_details": {
+        "title": "",
+        "text": "",
+        "projects": [
+            {
+                "title": "Kelly Daniels Photography",
+                "description": "A photography portfolio website developed using Wordpress. A theme has been used and overhauled with custom styling via css as well as alteration to PHP throughout. This is maintained using the Wordpress admin tools and run using a MySQL database.",
+                "link": "",
+                "startDate": "2017-09-01T00:00.000Z",
+                "endDate": "2017-10-01T00:00.000Z",
+                "techStack": [
+                    "WordPress",
+                    "PHP",
+                    "MySQL",
+                    "CSS3"
+                ]
+            },
+            {
+                "title": "Chris Webb Developer (v1)",
+                "description": "The first version of my website. Then named deanwebbdeveloper.com, it was used to showcase the technologies I had learned up to that point. This included HTML5, CSS3, JavaScript, jQuery, PHP, MYSQL, and Python. It also demonstrated my ability to work with API calls.\nThis website also included a PHP email form that would automatically send emails to me with the details provided.",
+                "link": "https://github.com/ChrisWebbDeveloper/chriswebbdeveloper.co.uk-v1",
+                "startDate": "2018-03-20T00:00.000Z",
+                "endDate": "2018-09-23T00:00.000Z",
+                "techStack": [
+                    "HTML5",
+                    "CSS3",
+                    "JavaScript",
+                    "jQuery",
+                    "PHP",
+                    "MySQL",
+                    "Python"
+                ]
+            },
+            {
+                "title": "Photography Portfolio Builder",
+                "description": "An ASP.Net Core 5 project that allows users to log in and arrange, display and sort portfolios. This allows photos to be uploaded, details and titles provided, and then included in various portfolios, and potentially in different categories. Portfolios can be kept in draft, privatised, or featured.\nAbout sections allow details and images to be included, and Contacts allows social media links to be included. This links to a MySQL database, and uses Typescript and SASS for functionality and styling.",
+                "link": "https://github.com/ChrisWebbDeveloper/photography-portfolio-builder",
+                "startDate": "2021-08-23T00:00.000Z",
+                "endDate": "2022-02-14T00:00.000Z",
+                "techStack": [
+                    "ASP.NET Core 5",
+                    "C#",
+                    "Entity Framework",
+                    "MySQL",
+                    "TypeScript",
+                    "Gulp.js",
+                    "SASS",
+                    "CSS3",
+                    "Bootstrap",
+                    "HTML5"
+                ]
+            },
+            {
+                "title": "Chris Webb Developer (v2)",
+                "description": "The second version of my website. This was designed using Laravel with React components, and provided with bootstrap styling via ReactBootstrap.\nThe backend has been used to provide APIs for pulling through the information displayed here (linked to an SQLite database), as well as handling the Contact form through Sendgrid.\nSASS is also used throughout for elegant styling, transpiled to CSS3 via Gulp.js.",
+                "link": "https://github.com/ChrisWebbDeveloper/chriswebbdeveloper.co.uk-v2",
+                "startDate": "2021-08-04T00.00:000Z",
+                "endDate": "2022-06-25T00:00.000Z",
+                "techStack": [
+                    "Laravel",
+                    "PHP",
+                    "SQLite",
+                    "React",
+                    "JavaScript",
+                    "SASS",
+                    "CSS3",
+                    "Bootstrap",
+                    "HTML5"
+                ]
+            },
+            {
+                "title": "Chris Webb Developer (v3)",
+                "description": "You are here, the third version of my website! This is a more streamlined version of my portfolio, opting to use Angular with a simple JSON object to pull my details from, similar to an API call. It also has used SASS for simple, elegant styling.",
+                "link": "https://github.com/ChrisWebbDeveloper/chriswebbdeveloper.co.uk",
+                "startDate": "2023-12-16T00:00.000Z",
+                "endDate": "",
+                "techStack": [
+                    "Angular",
+                    "TypeScript",
+                    "SASS",
+                    "CSS3",
+                    "Bootstrap",
+                    "HTML5"
+                ]
+            },
+            {
+                "title": "Archipelago Game",
+                "description": "Trying my hand at something different, I have experimented with game development. Taking my fondness and love of old-school top-down games like Zelda and Final Fantasy, I have started to build a top-down dungeon-crawler with combat that involves status effects and weapons of different style, speed, damage and other abilities.\nThis was initially built in Unity but rebuilt in Godot, opting to use C# to build components. I have also designed all of my own artwork in GIMP via 16x16 sprites.\nThis continues to be an experimental project for me, and something I continue with in my spare time",
+                "link": "",
+                "startDate": "2022-04-01T00:00.000Z",
+                "endDate": "",
+                "techStack": [
+                    "C#",
+                    "Godot",
+                    "Unity",
+                    "GIMP"
+                ]
+            }
+        ]
+    },
     "contact_details": {
         "title": "",
         "text": "Want to get in touch? I am available on at the links below:",
