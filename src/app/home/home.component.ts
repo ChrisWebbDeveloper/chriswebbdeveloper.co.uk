@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { HomeDetails } from '../models/home-details';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  @Input() details? : {};
+  @Input() details? : HomeDetails;
 
   ngOnInit() {
     console.log("Home", this.details);
