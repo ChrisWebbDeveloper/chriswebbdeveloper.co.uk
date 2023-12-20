@@ -15,6 +15,10 @@ export class SkillsComponent {
   @Input() skills!: Skill[];
 
   ngOnInit() {
-    this.skills.sort((a , b) => a.exp > b.exp ? -1 : 1);
+    this.sortSkills();
+  }
+  
+  sortSkills() {
+    this.skills.sort((a , b) => a.exp == b.exp && a.name.toLowerCase() < b.name.toLowerCase() ? -1 : a.exp > b.exp ? -1 : 1);
   }
 }

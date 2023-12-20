@@ -15,8 +15,4 @@ import { AboutDetails } from '../models/about-details';
 })
 export class AboutMeComponent {
   @Input() details!: AboutDetails;
-
-  ngOnInit() {
-    console.log("About", this.details);
-  }
 }

@@ -1,3 +1,6 @@
 <div class="container component-padding">
-    <h1>projects works!</h1>
+    <h1>{{details.title}}</h1>
+    <p *ngIf="details.text">{{details.text}}</p>
+
+    <app-project *ngFor="let project of details.projects" [project]="project"></app-project>
 </div>

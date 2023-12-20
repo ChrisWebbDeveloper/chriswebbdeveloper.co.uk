@@ -1,0 +1,19 @@
+<div class="row mt-4 mb-4">
+    <div class="col-12 col-lg-6"></div>
+    <div class="col-12 col-lg-6">
+        <div class="text-primary">
+            <h4>{{project.title}}</h4>
+            <p class="text-white"><small>{{project.startDateFormatted + " - " + project.endDateFormatted}}</small></p>
+            <hr />
+        </div>
+
+        <p *ngFor="let p of project.description">{{p}}</p>
+
+        <div *ngIf="project.techStack.length > 0">
+            <h5 class="pt-2">Tech Stack</h5>
+            <div class="mx-n2">
+                <button *ngFor="let tech of project.techStack" class="btn btn-secondary m-2">{{tech}}</button>
+            </div>
+        </div>
+    </div>
+</div>
