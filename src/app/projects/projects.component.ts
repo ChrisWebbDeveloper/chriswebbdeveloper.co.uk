@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-projects',
@@ -9,5 +9,9 @@ import { Component } from '@angular/core';
   host: {'class': 'bg-dark text-white'}
 })
 export class ProjectsComponent {
+  @Input() details?: {};
 
+  ngOnInit() {
+    console.log("Projects", this.details);
+  }
 }

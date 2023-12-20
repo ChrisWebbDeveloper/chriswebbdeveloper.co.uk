@@ -11,6 +11,6 @@ export class HomeComponent {
   @Input() details? : {};
 
   ngOnInit() {
-    console.log(this.details);
+    console.log("Home", this.details);
   }
 }
