@@ -21,7 +21,7 @@ body {
         }
 
         &:not(.navbar-brand) {
-            white-space: pre;
+            white-space: pre-wrap;
         }
     }
 }

@@ -8,8 +8,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
-  @Input() details?: {};
-  @Input() contacts?: {};
+  @Input() details!: {};
 
   ngOnInit() {
     console.log("Contact", this.details);
