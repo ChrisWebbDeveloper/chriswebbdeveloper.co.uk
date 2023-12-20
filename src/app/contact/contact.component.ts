@@ -9,6 +9,7 @@ import { Component, Input } from '@angular/core';
 })
 export class ContactComponent {
   @Input() details?: {};
+  @Input() contacts?: {};
 
   ngOnInit() {
     console.log("Contact", this.details);

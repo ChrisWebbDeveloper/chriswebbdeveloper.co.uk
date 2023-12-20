@@ -1,15 +1,16 @@
+import { ContactDetails } from "./contact-details";
 import { HomeDetails } from "./home-details";
 
 export class Content {
     homeDetails: HomeDetails;
     aboutDetails: {};
     projectsDetails: {};
-    contactDetails: {};
+    contactDetails: ContactDetails;
 
-    constructor(content: { home_details: any, about_details: any, projects_details: any, contact_details: any}) {
+    constructor(content: any) {
         this.homeDetails = new HomeDetails(content.home_details ?? {});
         this.aboutDetails = content.about_details ?? {};
         this.projectsDetails = content.projects_details ?? {};
-        this.contactDetails = content.contact_details ?? {};
+        this.contactDetails = new ContactDetails(content.contact_details ?? {});
     }
 }
