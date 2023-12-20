@@ -1,11 +1,9 @@
 <div class="container">
     <h1 class="display-1">
-        Hi, I'm
-        <br />
-        <span class="text-primary">Chris Webb</span>
+        <span *ngFor="let title of details.title" [class]="title.color ? 'text-' + title.color : ''">{{title.text}}</span>
     </h1>
 
-    <h1 class="display-5 my-4">I am a full-stack developer of software and web applications</h1>
+    <h1 class="display-5 my-4">{{details.subtitle}}</h1>
     <a href="#about-me" class="btn btn-outline-primary py-2 px-4" role="button">More About Me<i class="bi bi-chevron-right"></i></a>
 </div>
 
