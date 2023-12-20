@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Skill } from '../models/skill';
 
 @Component({
   selector: 'app-skills',
@@ -11,7 +12,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './skills.component.scss'
 })
 export class SkillsComponent {
-  skills: { name:string, exp:number }[] = [];
+  @Input() skills!: Skill[];
 
   ngOnInit() {
     this.skills.sort((a , b) => a.exp > b.exp ? -1 : 1);
