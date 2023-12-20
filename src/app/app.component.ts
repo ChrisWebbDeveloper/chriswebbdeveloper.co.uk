@@ -34,10 +34,7 @@ export class AppComponent {
 
   ngOnInit() {
     this.http.get(this.dataUrl).subscribe({
-      next: val => {
-        this.content = val;
-        console.log(val);
-      },
+      next: (val: any) => this.content = new Content(val),
       error: err => alert("Content could not be found at this time. Please try again later.")
     });
   }

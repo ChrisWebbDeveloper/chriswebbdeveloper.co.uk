@@ -1,6 +1,6 @@
 <app-header></app-header>
-<div data-bs-spy="scroll" data-bs-target=".navbar" tabindex="0">
-    <app-home id="home"></app-home>
+<div data-bs-spy="scroll" data-bs-target=".navbar" tabindex="0" *ngIf="content">
+    <app-home id="home" [details]="content.homeDetails"></app-home>
     <app-about-me id="about-me"></app-about-me>
     <app-projects id="projects"></app-projects>
     <app-contact id="contact"></app-contact>
