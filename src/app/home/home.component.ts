@@ -18,9 +18,4 @@ export class HomeComponent {
   @Input() details!: HomeDetails;
   @Input() contacts!: Contacts;
   version: string = version;
-
-  ngOnInit() {
-    console.log("Home", this.details);
-    console.log("Home", this.contacts);
-  }
 }

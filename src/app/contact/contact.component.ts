@@ -13,8 +13,4 @@ import { NgIf } from '@angular/common';
 })
 export class ContactComponent {
   @Input() details!: ContactDetails;
-
-  ngOnInit() {
-    console.log("Contact", this.details);
-  }
 }

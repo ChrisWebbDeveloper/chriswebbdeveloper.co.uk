@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { SkillsComponent } from '../skills/skills.component';
 import { CommonModule } from '@angular/common';
+import { AboutDetails } from '../models/about-details';
 
 @Component({
   selector: 'app-about-me',
@@ -13,16 +14,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './about-me.component.scss'
 })
 export class AboutMeComponent {
-  @Input() details?: {};
-  text: string[] = [];
+  @Input() details!: AboutDetails;
 
   ngOnInit() {
     console.log("About", this.details);
-  }
-
-  setText() {
-    // if (this.details && this.details.text != null) {
-    //   this.text = this.details.text.split("\n");
-    // }
   }
 }
