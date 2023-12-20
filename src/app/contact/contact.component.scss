@@ -1,5 +1,11 @@
 :host {
     display: flex;
-    // TODO REMOVE THIS
-    height: 600px;
+
+    a {
+        text-decoration: none;
+
+        i {
+            font-size: 2em;
+        }
+    }
 }
