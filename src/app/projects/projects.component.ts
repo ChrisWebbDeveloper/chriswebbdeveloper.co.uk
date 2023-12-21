@@ -50,7 +50,9 @@ export class ProjectsComponent {
     this.techsList.sort((a, b) => a.toLowerCase() < b.toLowerCase() ? -1 : 1);
   }
 
-  setSelectedTech(tech: string) {
-    this.selectedTech = tech;
+  setSelectedTech(event: Event, tech: string) {
+    event.preventDefault();
+    if (this.selectedTech != tech) this.selectedTech = tech;
+    else this.selectedTech = "all";
   }
 }

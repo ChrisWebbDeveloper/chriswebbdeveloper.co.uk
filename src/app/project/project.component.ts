@@ -15,10 +15,11 @@ import { NgFor, NgIf } from '@angular/common';
 export class ProjectComponent {
   @Input() project!: Project;
   @Input() selectedTech: string = "all";
+  @Input() selectedTechMethod!: Function;
   @Output() selectedTechChange = new EventEmitter<string>();
 
-  setSelectedTech(tech: string) {
-    this.selectedTech = tech;
+  setSelectedTech(event: Event, tech: string) {
+    this.selectedTechMethod(event, tech);
     this.selectedTechChange.emit(this.selectedTech);
   }
 }

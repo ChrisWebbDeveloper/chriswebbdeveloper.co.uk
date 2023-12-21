@@ -13,8 +13,8 @@
             <h4 class="pt-2">Tech Stack</h4>
             <div class="btn-group" role="group" aria-label="Tech Stack">
                 <ng-container *ngFor="let tech of project.techStack">
-                    <input type="checkbox" class="btn-check" [id]="project.title + '-' + tech" autocomplete="off">
-                    <label class="btn btn-secondary" [for]="project.title + '-' + tech" (click)="setSelectedTech(tech)">{{tech}}</label>
+                    <input type="checkbox" class="btn-check" [id]="project.title + '-' + tech" autocomplete="off" [checked]="selectedTech == tech">
+                    <label class="btn btn-secondary" [for]="project.title + '-' + tech" (click)="setSelectedTech($event, tech)">{{tech}}</label>
                 </ng-container>
             </div>
         </ng-container>
