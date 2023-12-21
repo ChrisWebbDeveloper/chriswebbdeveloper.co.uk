@@ -2,6 +2,7 @@ export class Project {
     title: string;
     description: string[];
     link?: string;
+    img?: string;
     startDate: Date;
     startDateFormatted: string;
     endDate?: Date;
@@ -12,6 +13,7 @@ export class Project {
         this.title = project.title;
         this.description = project.description ? project.description.split("\n") : [];
         this.link = project.link ?? null;
+        this.img = project.img ?? null;
         this.startDate = new Date(project.start_date);
         this.startDateFormatted = this.startDate.toLocaleDateString("default", { month: "short", year: "numeric" });
         this.endDate = project.end_date ? new Date(project.end_date) : undefined;

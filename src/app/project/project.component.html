@@ -1,5 +1,5 @@
 <div class="row mt-4">
-    <div class="col-12 col-lg-6"></div>
+    <div class="col-12 col-lg-6"><img *ngIf="project.img" [src]="'../../assets/images/' + project.img" [alt]="project.title" class="mb-4 mb-lg-0"></div>
     <div class="col-12 col-lg-6">
         <div class="text-primary">
             <h3>{{project.title}}</h3>
@@ -12,7 +12,12 @@
         <div *ngIf="project.techStack.length > 0">
             <h4 class="pt-2">Tech Stack</h4>
             <div class="mx-n2">
-                <button *ngFor="let tech of project.techStack" class="btn btn-secondary m-2">{{tech}}</button>
+                <div class="btn-group d-flex flex-wrap" role="group" aria-label="Tech Stack">
+                    <ng-container *ngFor="let tech of project.techStack">
+                        <input type="checkbox" class="btn-check" [value]="tech" autocomplete="off">
+                        <label class="btn btn-outline-secondary m-2" [for]="tech">{{tech}}</label>
+                    </ng-container>
+                </div>
             </div>
         </div>
     </div>

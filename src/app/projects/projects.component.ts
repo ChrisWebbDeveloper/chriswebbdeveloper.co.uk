@@ -23,6 +23,6 @@ export class ProjectsComponent {
   }
 
   sortProjects() {
-    this.details.projects.sort((a, b) => a.title < b.title ? -1 : 1);
+    this.details.projects.sort((a, b) => a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1);
   }
 }

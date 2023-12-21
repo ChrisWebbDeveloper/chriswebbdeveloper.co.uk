@@ -2,5 +2,5 @@
     <h2>{{details.title}}</h2>
     <p *ngIf="details.text">{{details.text}}</p>
 
-    <app-project *ngFor="let project of details.projects; let isLast = last" [project]="project" [class.mb-4]="!isLast"></app-project>
+    <app-project *ngFor="let project of details.projects; let isLast=last" [project]="project" [class.mb-4]="!isLast"></app-project>
 </div>
