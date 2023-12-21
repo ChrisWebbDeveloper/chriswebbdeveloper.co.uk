@@ -9,16 +9,14 @@
 
         <p *ngFor="let p of project.description">{{p}}</p>
 
-        <div *ngIf="project.techStack.length > 0">
+        <ng-container *ngIf="project.techStack.length > 0">
             <h4 class="pt-2">Tech Stack</h4>
-            <div class="mx-n2">
-                <div class="btn-group d-flex flex-wrap" role="group" aria-label="Tech Stack">
-                    <ng-container *ngFor="let tech of project.techStack">
-                        <input type="checkbox" class="btn-check" [value]="tech" autocomplete="off">
-                        <label class="btn btn-outline-secondary m-2" [for]="tech">{{tech}}</label>
-                    </ng-container>
-                </div>
+            <div class="btn-group" role="group" aria-label="Tech Stack">
+                <ng-container *ngFor="let tech of project.techStack">
+                    <input type="checkbox" class="btn-check" [value]="project.title + '-' + tech" autocomplete="off">
+                    <label class="btn btn-secondary" [for]="project.title + '-' + tech">{{tech}}</label>
+                </ng-container>
             </div>
-        </div>
+        </ng-container>
     </div>
 </div>

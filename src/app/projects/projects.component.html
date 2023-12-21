@@ -2,5 +2,15 @@
     <h2>{{details.title}}</h2>
     <p *ngIf="details.text">{{details.text}}</p>
 
+    <div class="btn-group my-4" role="group" aria-label="Tech List">
+        <input type="radio" class="btn-check" name="btnradio" id="tech-list-all" autocomplete="off" checked>
+        <label class="btn btn-outline-secondary" for="tech-list-all">All</label>
+
+        <ng-container *ngFor="let tech of techsList">
+            <input type="radio" class="btn-check" name="btnradio" [id]="'tech-list' + tech" autocomplete="off">
+            <label class="btn btn-outline-secondary" [for]="'tech-list' + tech">{{tech}}</label>
+        </ng-container>
+    </div>
+
     <app-project *ngFor="let project of details.projects; let isLast=last" [project]="project" [class.mb-4]="!isLast"></app-project>
 </div>

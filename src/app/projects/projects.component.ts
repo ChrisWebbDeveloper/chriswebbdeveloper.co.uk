@@ -17,9 +17,11 @@ import { ProjectComponent } from '../project/project.component';
 })
 export class ProjectsComponent {
   @Input() details!: ProjectsDetails;
+  techsList: string[] = [];
 
   ngOnInit() {
     this.sortProjects();
+    this.getSkillsList();
   }
 
   sortProjects() {
@@ -35,5 +37,15 @@ export class ProjectsComponent {
       else if (!a.endDate) return -1;
       else return 1;
     });
+  }
+
+  getSkillsList() {
+    this.details.projects.forEach(project => {
+      project.techStack.forEach(tech => {
+        if (!this.techsList.includes(tech)) this.techsList.push(tech);
+      });
+    });
+
+    this.techsList.sort((a, b) => a.toLowerCase() < b.toLowerCase() ? -1 : 1);
   }
 }
