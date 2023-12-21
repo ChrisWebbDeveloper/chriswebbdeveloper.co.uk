@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { ProjectsDetails } from '../models/projects-details';
 import { NgFor, NgIf } from '@angular/common';
 import { ProjectComponent } from '../project/project.component';
+import { ProjectContainsTechPipe } from '../pipes/project-contains-tech.pipe';
 
 @Component({
   selector: 'app-projects',
@@ -9,7 +10,8 @@ import { ProjectComponent } from '../project/project.component';
   imports: [
     NgIf,
     NgFor,
-    ProjectComponent
+    ProjectComponent,
+    ProjectContainsTechPipe
   ],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',

@@ -14,5 +14,5 @@
         </ng-container>
     </div>
 
-    <app-project *ngFor="let project of details.projects; let isLast=last" [(selectedTech)]="selectedTech" [selectedTechMethod]="setSelectedTech" [project]="project" [class.mb-4]="!isLast"></app-project>
+    <app-project *ngFor="let project of details.projects | projectContainsTech:selectedTech; let isLast=last" [(selectedTech)]="selectedTech" [selectedTechMethod]="setSelectedTech" [project]="project" [class.mb-4]="!isLast"></app-project>
 </div>
