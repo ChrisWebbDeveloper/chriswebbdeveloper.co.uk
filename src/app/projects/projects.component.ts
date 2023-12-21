@@ -23,6 +23,17 @@ export class ProjectsComponent {
   }
 
   sortProjects() {
-    this.details.projects.sort((a, b) => a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1);
+    this.details.projects.sort((a, b) => {
+      if (a.endDate == b.endDate) {
+        if (a.startDate == b.startDate) {
+          if (a.title.toLowerCase() < b.title.toLocaleLowerCase()) return -1;
+          else return 1;
+        }
+        else if (a.startDate > b.startDate) return -1;
+        else return 1;
+      }
+      else if (!a.endDate) return -1;
+      else return 1;
+    });
   }
 }

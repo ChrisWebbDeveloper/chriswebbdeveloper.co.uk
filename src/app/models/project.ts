@@ -4,9 +4,7 @@ export class Project {
     link?: string;
     img?: string;
     startDate: Date;
-    startDateFormatted: string;
     endDate?: Date;
-    endDateFormatted: string;
     techStack: string[];
 
     constructor(project: any) {
@@ -15,9 +13,19 @@ export class Project {
         this.link = project.link ?? null;
         this.img = project.img ?? null;
         this.startDate = new Date(project.start_date);
-        this.startDateFormatted = this.startDate.toLocaleDateString("default", { month: "short", year: "numeric" });
         this.endDate = project.end_date ? new Date(project.end_date) : undefined;
-        this.endDateFormatted = this.endDate ? this.endDate.toLocaleDateString("default", { month: "short", year: "numeric" }) : "Present";
         this.techStack = project.tech_stack ?? [];
+    }
+
+    private getDateFormatted(date: Date) {
+        return date.toLocaleDateString("default", { month: "short", year: "numeric" });
+    }
+
+    public getStartDateFormatted() {
+        return this.getDateFormatted(this.startDate);
+    }
+
+    public getEndDateFormatted() {
+        return this.endDate ? this.getDateFormatted(this.endDate) : "Present";
     }
 }
