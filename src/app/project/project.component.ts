@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Project } from '../models/project';
 import { NgFor, NgIf } from '@angular/common';
 
@@ -14,4 +14,11 @@ import { NgFor, NgIf } from '@angular/common';
 })
 export class ProjectComponent {
   @Input() project!: Project;
+  @Input() selectedTech: string = "all";
+  @Output() selectedTechChange = new EventEmitter<string>();
+
+  setSelectedTech(tech: string) {
+    this.selectedTech = tech;
+    this.selectedTechChange.emit(this.selectedTech);
+  }
 }

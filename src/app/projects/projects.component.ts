@@ -18,6 +18,7 @@ import { ProjectComponent } from '../project/project.component';
 export class ProjectsComponent {
   @Input() details!: ProjectsDetails;
   techsList: string[] = [];
+  selectedTech: string = "all";
 
   ngOnInit() {
     this.sortProjects();
@@ -47,5 +48,9 @@ export class ProjectsComponent {
     });
 
     this.techsList.sort((a, b) => a.toLowerCase() < b.toLowerCase() ? -1 : 1);
+  }
+
+  setSelectedTech(tech: string) {
+    this.selectedTech = tech;
   }
 }
