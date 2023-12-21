@@ -2,8 +2,6 @@
     <h2>{{details.title}}</h2>
     <p *ngIf="details.text">{{details.text}}</p>
 
-    <p>{{selectedTech}}</p>
-    
     <div class="btn-group my-4" role="group" aria-label="Tech List">
         <input type="checkbox" class="btn-check" name="btnradio" id="tech-list-all" autocomplete="off" [checked]="selectedTech == 'all'">
         <label class="btn btn-outline-secondary" for="tech-list-all" (click)="setSelectedTech($event, 'all')">All</label>
