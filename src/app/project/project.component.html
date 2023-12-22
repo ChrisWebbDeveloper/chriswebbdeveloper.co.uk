@@ -7,6 +7,7 @@
             <hr />
         </div>
 
+        <a *ngIf="project.link" [href]="project.link" target="_blank" type="button" class="btn btn-outline-primary mb-3">Go to Project <i class="bi bi-mouse2-fill"></i></a>
         <p *ngFor="let p of project.description">{{p}}</p>
 
         <ng-container *ngIf="project.techStack.length > 0">
