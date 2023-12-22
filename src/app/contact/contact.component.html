@@ -1,17 +1,17 @@
 <div class="container component-padding">
-    <h1>{{details.title}}</h1>
+    <h1>Contact</h1>
 
     <p *ngIf="details.text" class="my-4">{{details.text}}</p>
 
-    <div class="row">
+    <div class="row" *ngIf="details.contacts">
         <div class="col-12 col-lg-4">
             <a *ngIf="details.contacts.email" [href]="'mailto:' + details.contacts.email" class="link-secondary"><i class="bi bi-envelope"></i> &nbsp; {{details.contacts.email}}</a>
         </div>
         <div class="col-12 col-lg-4">
-            <a *ngIf="details.contacts.linkedin" [href]="details.contacts.linkedinLink" target="_blank" class="link-secondary"><i class="bi bi-linkedin"></i> &nbsp; {{details.contacts.linkedin}}</a>
+            <a *ngIf="details.contacts.linkedin" [href]="details.contacts.getLinkedinLink()" target="_blank" class="link-secondary"><i class="bi bi-linkedin"></i> &nbsp; {{details.contacts.linkedin}}</a>
         </div>
         <div class="col-12 col-lg-4">
-            <a *ngIf="details.contacts.github" [href]="details.contacts.githubLink" target="_blank" class="link-secondary"><i class="bi bi-github"></i> &nbsp; {{details.contacts.github}}</a>
+            <a *ngIf="details.contacts.github" [href]="details.contacts.getGithubLink()" target="_blank" class="link-secondary"><i class="bi bi-github"></i> &nbsp; {{details.contacts.github}}</a>
         </div>
     </div>
 </div>

@@ -1,15 +1,24 @@
 export class Contacts {
-    email: string;
-    linkedin: string;
-    linkedinLink: string;
-    github: string;
-    githubLink: string;
+    email?: string;
+    linkedin?: string;
+    github?: string;
 
     constructor(contacts: any) {
-        this.email = contacts.email ?? "";
-        this.linkedin = contacts.linkedin ?? "";
-        this.linkedinLink = "https://www.linkedin.com/in/" + contacts.linkedin ?? "";
-        this.github = contacts.github ?? "";
-        this.githubLink = "https://github.com/" + contacts.github ?? "";
+        if (contacts.email) this.email = contacts.email;
+        if (contacts.linkedin) this.linkedin = contacts.linkedin;
+        if (contacts.github) this.github = contacts.github;
+    }
+
+    private getLink(link: string | undefined, base: string): string {
+        if (link) return base + this.linkedin;
+        else return "";
+    }
+
+    public getLinkedinLink(): string {
+        return this.getLink(this.linkedin, "https://www.linkedin.com/in/");
+    }
+
+    public getGithubLink(): string {
+        return this.getLink(this.github, "https://www.github.com/");
     }
 }

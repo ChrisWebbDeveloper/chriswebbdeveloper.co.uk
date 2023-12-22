@@ -8,6 +8,6 @@ export class AboutDetails {
     constructor(about: any) {
         this.title = about.title ?? "About Me";
         this.text = about.text ? about.text.split("\n") : [];
-        this.skills = about.skills?? [];
+        this.skills = about.skills ?? [];
     }
 }

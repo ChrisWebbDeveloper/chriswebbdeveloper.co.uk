@@ -10,10 +10,10 @@ export class Project {
     constructor(project: any) {
         this.title = project.title;
         this.description = project.description ? project.description.split("\n") : [];
-        this.link = project.link ?? null;
-        this.img = project.img ?? null;
+        if (project.link) this.link = project.link;
+        if (project.img) this.img = project.img;
         this.startDate = new Date(project.start_date);
-        this.endDate = project.end_date ? new Date(project.end_date) : undefined;
+        if (project.end_date) this.endDate = new Date(project.end_date);
         this.techStack = project.tech_stack ?? [];
     }
 
