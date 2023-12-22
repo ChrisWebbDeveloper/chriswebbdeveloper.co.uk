@@ -5,7 +5,7 @@
 
     <div class="row mb-4" *ngIf="details.contacts">
         <div class="col-12 col-lg-4">
-            <p *ngIf="details.contacts.email"><a [href]="'mailto:' + details.contacts.email" class="link-secondary"><i class="bi bi-envelope"></i> &nbsp; {{details.contacts.email}}</a></p>
+            <p *ngIf="details.contacts.email"><a [href]="'mailto:' + details.contacts.email" class="link-secondary"><i class="bi bi-envelope-fill"></i> &nbsp; {{details.contacts.email}}</a></p>
         </div>
         <div class="col-12 col-lg-4">
             <p *ngIf="details.contacts.linkedin"><a [href]="details.contacts.getLinkedinLink()" target="_blank" class="link-secondary"><i class="bi bi-linkedin"></i> &nbsp; {{details.contacts.linkedin}}</a></p>
@@ -17,8 +17,14 @@
 
     <div class="row" *ngIf="details.cv">
         <h3>CV</h3>
-        <p *ngIf="details.cv.text">{{details.cv.text}}</p>
-        <p *ngIf="details.cv.pdf"><a [href]="details.cv.pdf" download>Download PDF</a></p>
-        <p *ngIf="details.cv.docx"><a [href]="details.cv.docx" download>Download DOCX</a></p>
+        <p *ngIf="details.cv.text" class="mb-4">{{details.cv.text}}</p>
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <p *ngIf="details.cv.pdf"><a [href]="details.cv.pdf" class="link-secondary" download><i class="bi bi-filetype-pdf"></i> &nbsp; Download PDF</a></p>
+            </div>
+            <div class="col-12 col-lg-6">
+                <p *ngIf="details.cv.docx"><a [href]="details.cv.docx" class="link-secondary" download><i class="bi bi-filetype-docx"></i> &nbsp; Download DOCX</a></p>
+            </div>
+        </div>
     </div>
 </div>
