@@ -18,7 +18,7 @@ export class ProjectComponent {
   @Input() selectedTechMethod!: Function;
   @Output() selectedTechChange = new EventEmitter<string>();
 
-  setSelectedTech(event: Event, tech: string) {
+  setSelectedTech(event: Event, tech: string): void {
     this.selectedTechMethod(event, tech);
     this.selectedTechChange.emit(this.selectedTech);
   }

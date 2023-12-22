@@ -14,11 +14,11 @@ import { Skill } from '../models/skill';
 export class SkillsComponent {
   @Input() skills!: Skill[];
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.sortSkills();
   }
   
-  sortSkills() {
+  sortSkills(): void {
     this.skills.sort((a , b) => a.exp == b.exp && a.name.toLowerCase() < b.name.toLowerCase() ? -1 : a.exp > b.exp ? -1 : 1);
   }
 }

@@ -22,12 +22,12 @@ export class ProjectsComponent {
   techsList: string[] = [];
   selectedTech: string = "all";
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.sortProjects();
     this.getSkillsList();
   }
 
-  sortProjects() {
+  sortProjects(): void {
     this.details.projects.sort((a, b) => {
       if (a.endDate == b.endDate) {
         if (a.startDate == b.startDate) {
@@ -42,7 +42,7 @@ export class ProjectsComponent {
     });
   }
 
-  getSkillsList() {
+  getSkillsList(): void {
     this.details.projects.forEach(project => {
       project.techStack.forEach(tech => {
         if (!this.techsList.includes(tech)) this.techsList.push(tech);
@@ -52,7 +52,7 @@ export class ProjectsComponent {
     this.techsList.sort((a, b) => a.toLowerCase() < b.toLowerCase() ? -1 : 1);
   }
 
-  setSelectedTech(event: Event, tech: string) {
+  setSelectedTech(event: Event, tech: string): void {
     event.preventDefault();
     if (this.selectedTech != tech) this.selectedTech = tech;
     else this.selectedTech = "all";
