@@ -1,6 +1,8 @@
 {
   "name": "chriswebbdeveloper.co.uk",
   "version": "3.0.0",
+  "displayName": "Chris Webb Developer",
+  "buildYear": 2023,
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
