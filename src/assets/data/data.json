@@ -143,6 +143,11 @@
             "email": "webb.christopher@live.co.uk",
             "linkedin": "webb-christopher",
             "github": "ChrisWebbDeveloper"
+        },
+        "cv": {
+            "text": "My CV is available below in pdf and docx formats:",
+            "pdf": "https://github.com/ChrisWebbDeveloper/cv/raw/main/Christopher%20Webb%20-%20CV.pdf",
+            "docx": "https://github.com/ChrisWebbDeveloper/cv/raw/main/Christopher%20Webb%20-%20CV.docx"
         }
     }
 }
