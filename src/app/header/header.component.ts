@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { displayName } from '../../../package.json'
+import packgeJson from '../../../package.json'
 
 @Component({
   selector: 'app-header',
@@ -9,5 +9,5 @@ import { displayName } from '../../../package.json'
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  displayName: string = displayName;
+  displayName: string = packgeJson.displayName;
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { displayName, version, buildYear } from '../../../package.json';
+import packageJson from '../../../package.json';
 
 @Component({
   selector: 'app-footer',
@@ -9,9 +9,9 @@ import { displayName, version, buildYear } from '../../../package.json';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
-  version: string = version;
-  displayName: string = displayName;
-  buildYear: number = buildYear;
+  version: string = packageJson.version;
+  displayName: string = packageJson.displayName;
+  buildYear: number = packageJson.buildYear;
   currentYear: number;
 
   constructor() {

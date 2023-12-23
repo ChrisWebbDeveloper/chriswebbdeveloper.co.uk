@@ -27,7 +27,6 @@ import { DataService } from './services/data.service';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  dataUrl = "../assets/data/data.json";
   content?: Content;
   
   constructor(private data: DataService) {
