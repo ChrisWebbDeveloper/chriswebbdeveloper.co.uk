@@ -1,12 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { ContactDetails } from '../models/contact-details';
-import { NgIf } from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
   imports: [
-    NgIf
+    CommonModule
   ],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
