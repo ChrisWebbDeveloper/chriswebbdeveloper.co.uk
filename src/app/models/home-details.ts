@@ -1,11 +1,9 @@
-import { HomeTitle } from "./home-title";
-
 export class HomeDetails {
-    title: HomeTitle[];
-    subtitle: string;
+    name!: string;
+    blurb?: string;
 
-    constructor(home: any) {
-        this.title = home.title ?? [];
-        this.subtitle = home.subtitle ?? "";
+    constructor(name: string, blurb?: string) {
+        this.name = name;
+        if (blurb) this.blurb = blurb;
     }
 }

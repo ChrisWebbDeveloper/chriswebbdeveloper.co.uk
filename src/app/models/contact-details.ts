@@ -1,14 +1,24 @@
-import { Contacts } from "./contacts";
-import { Cv } from "./cv";
-
 export class ContactDetails {
-    text?: string;
-    contacts: Contacts;
-    cv?: Cv;
+    email?: string;
+    linkedin?: string;
+    github?: string;
 
-    constructor(contact: any) {
-        if (contact.text) this.text = contact.text;
-        this.contacts = new Contacts(contact.contacts ?? {});
-        if (contact.cv) this.cv = contact.cv;
+    constructor(contacts: {email?: string, linkedin?: string, github?: string}) {
+        if (contacts.email) this.email = contacts.email;
+        if (contacts.linkedin) this.linkedin = contacts.linkedin;
+        if (contacts.github) this.github = contacts.github;
+    }
+
+    private getLink(link: string | undefined, base: string): string | null {
+        if (link && link.length > 0) return base + this.linkedin;
+        else return null;
+    }
+
+    public getLinkedinLink(): string | null {
+        return this.getLink(this.linkedin, "https://www.linkedin.com/in/");
+    }
+
+    public getGithubLink(): string | null {
+        return this.getLink(this.github, "https://www.github.com/");
     }
 }

@@ -1,13 +1,9 @@
-import { Skill } from "./skill";
-
 export class AboutDetails {
-    title: string;
-    text: string[];
-    skills: Skill[];
+    title?: string;
+    aboutMe!: string[];
 
-    constructor(about: any) {
-        this.title = about.title ?? "About Me";
-        this.text = about.text ? about.text.split("\n") : [];
-        this.skills = about.skills ?? [];
+    constructor(aboutMe: string, title?: string) {
+        if (title) this.title = title;
+        this.aboutMe = aboutMe.split("\n");
     }
 }

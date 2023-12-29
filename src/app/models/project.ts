@@ -7,25 +7,30 @@ export class Project {
     endDate?: Date;
     techStack: string[];
 
-    constructor(project: any) {
+    constructor(project: {title: string, formatted_description: string, link?: string, start_date: Date, end_date?: Date, tech_stack: string[]}) {
         this.title = project.title;
-        this.description = project.description ? project.description.split("\n") : [];
+        this.description = project.formatted_description ? project.formatted_description.split("\n") : [];
         if (project.link) this.link = project.link;
-        if (project.img) this.img = project.img;
+        this.img = this.getImg();
         this.startDate = new Date(project.start_date);
         if (project.end_date) this.endDate = new Date(project.end_date);
-        this.techStack = project.tech_stack ?? [];
+        this.techStack = project.tech_stack;
     }
 
-    private getDateFormatted(date: Date) {
+    private getImg(): string {
+        //TODO
+        return "";
+    }
+
+    private getDateFormatted(date: Date): string {
         return date.toLocaleDateString("default", { month: "short", year: "numeric" });
     }
 
-    public getStartDateFormatted() {
+    public getStartDateFormatted(): string {
         return this.getDateFormatted(this.startDate);
     }
 
-    public getEndDateFormatted() {
+    public getEndDateFormatted(): string {
         return this.endDate ? this.getDateFormatted(this.endDate) : "Present";
     }
 }

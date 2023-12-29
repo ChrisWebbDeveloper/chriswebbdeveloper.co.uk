@@ -24,6 +24,6 @@ export interface Data {
 
     skills: {
         name: string;
-        exp: string;
+        exp?: number;
     }[];
 }
