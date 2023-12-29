@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { HomeDetails } from '../models/home-details';
 import { NgFor, NgIf } from '@angular/common';
-import { Contacts } from '../models/contacts';
+import { ContactDetails } from '../models/contact-details';
 
 @Component({
   selector: 'app-home',
@@ -15,5 +15,5 @@ import { Contacts } from '../models/contacts';
 })
 export class HomeComponent {
   @Input() details!: HomeDetails;
-  @Input() contacts!: Contacts;
+  @Input() contacts!: ContactDetails;
 }

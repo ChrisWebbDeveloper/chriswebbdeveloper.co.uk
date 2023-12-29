@@ -1,13 +1,15 @@
-<div class="container">
+<div class="container" *ngIf="details">
     <h1 class="display-1">
-        <span *ngFor="let title of details.title" [class]="title.color ? 'text-' + title.color : ''">{{title.text}}</span>
+        Hi, I'm
+        <br />
+        <span class="text-primary">{{details.name}}</span>
     </h1>
 
-    <h1 class="display-5 my-4">{{details.subtitle}}</h1>
+    <h1 class="display-5 my-4">{{details.blurb}}</h1>
     <a href="#about-me" class="btn btn-outline-primary py-2 px-4" role="button">More About Me<i class="bi bi-chevron-right"></i></a>
 </div>
 
-<div class="position-absolute bottom-0 w-100">
+<div class="position-absolute bottom-0 w-100" *ngIf="contacts">
     <div class="container mb-3 d-flex justify-content-end">
         <h3>
             <a *ngIf="contacts.email" [href]="'mailto:' + contacts.email" class="link-light"><i class="bi bi-envelope-fill"></i></a>
