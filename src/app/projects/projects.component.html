@@ -1,4 +1,4 @@
-<div class="container component-padding">
+<div class="container component-padding" *ngIf="projects && projects.length > 0">
     <h2>Projects</h2>
 
     <div class="btn-group my-4" role="group" aria-label="Tech List">
@@ -11,5 +11,5 @@
         </ng-container>
     </div>
 
-    <app-project *ngFor="let project of details.projects | projectContainsTech:selectedTech; let isLast=last" [(selectedTech)]="selectedTech" [selectedTechMethod]="setSelectedTech" [project]="project" [class.mb-4]="!isLast"></app-project>
+    <app-project *ngFor="let project of projects | projectContainsTech:selectedTech; let isLast=last" [(selectedTech)]="selectedTech" [selectedTechMethod]="setSelectedTech" [project]="project" [class.mb-4]="!isLast"></app-project>
 </div>

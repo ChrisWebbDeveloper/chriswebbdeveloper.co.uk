@@ -1,15 +1,15 @@
 import { Component, Input } from '@angular/core';
-import { ProjectsDetails } from '../models/projects-details';
-import { NgFor, NgIf } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { ProjectComponent } from '../project/project.component';
 import { ProjectContainsTechPipe } from '../pipes/project-contains-tech.pipe';
+import { Project } from '../models/project';
+import { ImageService } from '../services/image.service';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
   imports: [
-    NgIf,
-    NgFor,
+    CommonModule,
     ProjectComponent,
     ProjectContainsTechPipe
   ],
@@ -18,17 +18,17 @@ import { ProjectContainsTechPipe } from '../pipes/project-contains-tech.pipe';
   host: {'class': 'bg-dark text-white'}
 })
 export class ProjectsComponent {
-  @Input() details!: ProjectsDetails;
+  @Input() projects!: Project[];
   techsList: string[] = [];
   selectedTech: string = "all";
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.sortProjects();
-    this.getSkillsList();
+    this.getTechsList();
   }
 
   sortProjects(): void {
-    this.details.projects.sort((a, b) => {
+    this.projects.sort((a, b) => {
       if (a.endDate == b.endDate) {
         if (a.startDate == b.startDate) {
           if (a.title.toLowerCase() < b.title.toLocaleLowerCase()) return -1;
@@ -37,13 +37,13 @@ export class ProjectsComponent {
         else if (a.startDate > b.startDate) return -1;
         else return 1;
       }
-      else if (!a.endDate) return -1;
+      else if (!a.endDate || (b.endDate && a.endDate > b.endDate)) return -1;
       else return 1;
     });
   }
 
-  getSkillsList(): void {
-    this.details.projects.forEach(project => {
+  getTechsList(): void {
+    this.projects.forEach(project => {
       project.techStack.forEach(tech => {
         if (!this.techsList.includes(tech)) this.techsList.push(tech);
       });

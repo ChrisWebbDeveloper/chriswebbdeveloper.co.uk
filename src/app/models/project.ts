@@ -11,15 +11,9 @@ export class Project {
         this.title = project.title;
         this.description = project.formatted_description ? project.formatted_description.split("\n") : [];
         if (project.link) this.link = project.link;
-        this.img = this.getImg();
         this.startDate = new Date(project.start_date);
         if (project.end_date) this.endDate = new Date(project.end_date);
         this.techStack = project.tech_stack;
-    }
-
-    private getImg(): string {
-        //TODO
-        return "";
     }
 
     private getDateFormatted(date: Date): string {

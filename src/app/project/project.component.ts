@@ -1,13 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Project } from '../models/project';
-import { NgFor, NgIf } from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-project',
   standalone: true,
   imports: [
-    NgFor,
-    NgIf
+    CommonModule
   ],
   templateUrl: './project.component.html',
   styleUrl: './project.component.scss'

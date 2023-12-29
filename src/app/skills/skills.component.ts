@@ -14,7 +14,7 @@ import { Skill } from '../models/skill';
 export class SkillsComponent {
   @Input() skills!: Skill[];
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.sortSkills();
   }
   
