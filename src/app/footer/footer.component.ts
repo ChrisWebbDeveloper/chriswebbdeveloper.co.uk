@@ -10,11 +10,6 @@ import packageJson from '../../../package.json';
 })
 export class FooterComponent {
   version: string = packageJson.version;
-  displayName: string = packageJson.displayName;
   buildYear: number = packageJson.buildYear;
-  currentYear: number;
-
-  constructor() {
-    this.currentYear = new Date().getFullYear();
-  }
+  currentYear: number = new Date().getFullYear();
 }
