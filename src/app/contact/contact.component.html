@@ -1,29 +1,29 @@
 <div class="container component-padding">
     <h2>Contact</h2>
 
-    <p *ngIf="details.text" class="my-4">{{details.text}}</p>
+    <p class="my-4">Want to get in touch? I am available on at the links below:</p>
 
-    <div class="row mb-4" *ngIf="details.contacts">
+    <div class="row mb-4" *ngIf="details">
         <div class="col-12 col-lg-4">
-            <p *ngIf="details.contacts.email"><a [href]="'mailto:' + details.contacts.email" class="link-secondary"><i class="bi bi-envelope-fill"></i> &nbsp; {{details.contacts.email}}</a></p>
+            <p *ngIf="details.email"><a [href]="'mailto:' + details.email" class="link-secondary"><i class="bi bi-envelope-fill"></i> &nbsp; {{details.email}}</a></p>
         </div>
         <div class="col-12 col-lg-4">
-            <p *ngIf="details.contacts.linkedin"><a [href]="details.contacts.getLinkedinLink()" target="_blank" class="link-secondary"><i class="bi bi-linkedin"></i> &nbsp; {{details.contacts.linkedin}}</a></p>
+            <p *ngIf="details.linkedin"><a [href]="details.getLinkedinLink()" target="_blank" class="link-secondary"><i class="bi bi-linkedin"></i> &nbsp; {{details.linkedin}}</a></p>
         </div>
         <div class="col-12 col-lg-4">
-            <p *ngIf="details.contacts.github"><a [href]="details.contacts.getGithubLink()" target="_blank" class="link-secondary"><i class="bi bi-github"></i> &nbsp; {{details.contacts.github}}</a></p>
+            <p *ngIf="details.github"><a [href]="details.getGithubLink()" target="_blank" class="link-secondary"><i class="bi bi-github"></i> &nbsp; {{details.github}}</a></p>
         </div>
     </div>
 
-    <div class="row" *ngIf="details.cv">
+    <div class="row" *ngIf="cv">
         <h3>CV</h3>
-        <p *ngIf="details.cv.text" class="mb-4">{{details.cv.text}}</p>
+        <p class="mb-4">My CV is available below in pdf and docx formats:</p>
         <div class="row">
             <div class="col-12 col-lg-6">
-                <p *ngIf="details.cv.pdf"><a [href]="details.cv.pdf" class="link-secondary" download><i class="bi bi-filetype-pdf"></i> &nbsp; Download PDF</a></p>
+                <p *ngIf="cv.pdf"><a [href]="cv.pdf" class="link-secondary" download target="_blank"><i class="bi bi-filetype-pdf"></i> &nbsp; Download PDF</a></p>
             </div>
             <div class="col-12 col-lg-6">
-                <p *ngIf="details.cv.docx"><a [href]="details.cv.docx" class="link-secondary" download><i class="bi bi-filetype-docx"></i> &nbsp; Download DOCX</a></p>
+                <p *ngIf="cv.docx"><a [href]="cv.docx" class="link-secondary" download target="_blank"><i class="bi bi-filetype-docx"></i> &nbsp; Download DOCX</a></p>
             </div>
         </div>
     </div>
