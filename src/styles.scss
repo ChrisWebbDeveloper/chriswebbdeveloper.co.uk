@@ -15,14 +15,8 @@ body {
         padding-bottom: $component-y-padding;
     }
 
-    h1, h2, h3, h4, h5, h6, .navbar-brand, p {
-        &:not(p) {
-            font-family: "Raleway", sans-serif;
-        }
-
-        &:not(.navbar-brand) {
-            white-space: pre-wrap;
-        }
+    h1, h2, h3, h4, h5, h6, .navbar-brand {
+        font-family: "Raleway", sans-serif;
     }
     
     a {
