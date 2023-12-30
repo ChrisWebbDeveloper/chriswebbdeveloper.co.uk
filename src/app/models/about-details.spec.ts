@@ -6,7 +6,7 @@ describe(`AboutDetails`, () => {
     const aboutMe: string = 'This\n is \n a \n test\n string';
 
     beforeEach(async () => {
-        aboutDetails = new AboutDetails('');
+        aboutDetails = new AboutDetails(aboutMe, title);
     });
 
     describe(`Component`, () => {
@@ -21,11 +21,11 @@ describe(`AboutDetails`, () => {
         });
 
         it(`should be undefined if not set`, () => {
+            aboutDetails = new AboutDetails("");
             expect(aboutDetails.title).toBeUndefined();
         });
 
         it(`should match the given value passed into the constructor if provided`, () => {
-            aboutDetails = new AboutDetails("", title);
             expect(aboutDetails.title).toEqual(title);
         });
     });
@@ -36,7 +36,6 @@ describe(`AboutDetails`, () => {
         });
 
         it(`should be an array, with each item set to the string value split along line breaks (\\n)`, () => {
-            aboutDetails = new AboutDetails(aboutMe);
             const textAsArray = aboutMe.split('\n');
 
             for (let i = 0; i < aboutDetails.aboutMe.length; i++) {
