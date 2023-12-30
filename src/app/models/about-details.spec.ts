@@ -1,11 +1,12 @@
 import { AboutDetails } from './about-details';
-import { Skill } from './skill';
 
 describe(`AboutDetails`, () => {
     let aboutDetails: AboutDetails;
+    const title: string = 'Test Title';
+    const aboutMe: string = 'This\n is \n a \n test\n string';
 
     beforeEach(async () => {
-        aboutDetails = new AboutDetails({});
+        aboutDetails = new AboutDetails('');
     });
 
     describe(`Component`, () => {
@@ -15,61 +16,32 @@ describe(`AboutDetails`, () => {
     });
 
     describe(`title`, () => {
-        const title: string = 'Test Title';
-
         it(`should be included as a property`, () => {
             expect(aboutDetails.title).toBeTruthy();
         });
 
-        it(`should default to 'About Me'`, () => {
-            expect(aboutDetails.title).toEqual('About Me');
+        it(`should be undefined if not set`, () => {
+            expect(aboutDetails.title).toBeUndefined();
         });
 
-        it(`should match the given value passed into the constructor`, () => {
-            aboutDetails = new AboutDetails({title: title});
+        it(`should match the given value passed into the constructor if provided`, () => {
+            aboutDetails = new AboutDetails("", title);
             expect(aboutDetails.title).toEqual(title);
         });
     });
 
-    describe(`text`, () => {
-        const text: string = `This\n is \n a \n test\n string`;
-
+    describe(`aboutMe`, () => {
         it (`should be included as a property`, () => {
-            expect(aboutDetails.text).toBeTruthy();
-        });
-
-        it(`should default to an empty array`, () => {
-            expect(aboutDetails.text).toEqual([]);
+            expect(aboutDetails.aboutMe).toBeTruthy();
         });
 
         it(`should be an array, with each item set to the string value split along line breaks (\\n)`, () => {
-            aboutDetails = new AboutDetails({text: text});
-            const textAsArray = text.split('\n');
+            aboutDetails = new AboutDetails(aboutMe);
+            const textAsArray = aboutMe.split('\n');
 
-            for (let i = 0; i < aboutDetails.text.length; i++) {
-                expect(aboutDetails.text[i]).toEqual(textAsArray[i]);
+            for (let i = 0; i < aboutDetails.aboutMe.length; i++) {
+                expect(aboutDetails.aboutMe[i]).toEqual(textAsArray[i]);
             };
-        });
-    });
-
-    describe(`skills`, () => {
-        const skills: Skill[] = [
-            { name:'Test 1', exp:100 },
-            { name:'Test 2', exp:100 },
-            { name:'Test 3', exp:100 },
-        ];
-
-        it(`should be included as a property`, () => {
-            expect(aboutDetails.skills).toBeTruthy();
-        });
-
-        it(`should default to an empty array`, () => {
-            expect(aboutDetails.text).toEqual([]);
-        });
-
-        it(`should be an array matching the data passed in`, () => {
-            aboutDetails = new AboutDetails({skills: skills});
-            expect(aboutDetails.skills).toEqual(skills);
         });
     });
 });
