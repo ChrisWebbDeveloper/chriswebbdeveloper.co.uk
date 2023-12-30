@@ -22,9 +22,21 @@ export class ProjectsComponent {
   techsList: string[] = [];
   selectedTech: string = "all";
 
+  constructor(private image: ImageService) {
+  }
+
   ngOnInit() {
+    this.getProjectImages();
     this.sortProjects();
     this.getTechsList();
+  }
+
+  getProjectImages() {
+    this.projects.forEach(project => {
+      this.image.getImage(project.title).subscribe({
+        next: val => project.img = val
+      });
+    });
   }
 
   sortProjects(): void {
