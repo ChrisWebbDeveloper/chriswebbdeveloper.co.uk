@@ -10,15 +10,15 @@ export class ContactDetails {
     }
 
     private getLink(link: string | undefined, base: string): string | null {
-        if (link && link.length > 0) return base + this.linkedin;
+        if (link && link.length > 0) return base + link;
         else return null;
     }
 
     public getLinkedinLink(): string | null {
-        return this.getLink(this.linkedin, "https://www.linkedin.com/in/");
+        return this.getLink(this.linkedin, "https://linkedin.com/in/");
     }
 
     public getGithubLink(): string | null {
-        return this.getLink(this.github, "https://www.github.com/");
+        return this.getLink(this.github, "https://github.com/");
     }
 }
