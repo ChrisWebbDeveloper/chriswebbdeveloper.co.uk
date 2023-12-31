@@ -71,8 +71,8 @@ describe(`ContactDetails`, () => {
         });
 
         it ('should return the link concatenated with the base if the link is a valid string', () => {
-            const link = "link";
-            const base = "base";
+            const link = 'link';
+            const base = 'base';
 
             //@ts-expect-error
             expect(contactDetails.getLink(link, base)).toEqual(base + link);
@@ -80,12 +80,12 @@ describe(`ContactDetails`, () => {
 
         it ('should return null if the link is undefined or empty', () => {
             let link = undefined;
-            const base = "base";
+            const base = 'base';
 
             //@ts-expect-error
             expect(contactDetails.getLink(link, base)).toBeNull();
 
-            link = "";
+            link = '';
 
             //@ts-expect-error
             expect(contactDetails.getLink(link, base)).toBeNull();

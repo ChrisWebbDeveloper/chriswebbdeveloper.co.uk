@@ -7,17 +7,17 @@ import { catchError, map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ImageService {
-  exts: string[] = [ "jpg", "gif", "png"];
+  exts: string[] = [ 'jpg', 'gif', 'png'];
   currentIndex: number = 0;
 
   constructor(private http: HttpClient) {
   }
 
   public getImage(name: string): Observable<string | undefined> {
-    let fileName: string = name.toLowerCase().replaceAll(" ", "-").replaceAll("(", "").replaceAll(")", "")
+    let fileName: string = name.toLowerCase().replaceAll(' ', '-').replaceAll('(', '').replaceAll(')', '')
     const imgUrl = `../../assets/images/${fileName}.${this.exts[this.currentIndex]}`;
 
-    return this.http.get(imgUrl, { observe:"response", responseType:"blob" }).pipe(
+    return this.http.get(imgUrl, { observe:'response', responseType:'blob' }).pipe(
       map(val => {
         return imgUrl;
       }),

@@ -21,7 +21,7 @@ describe(`AboutDetails`, () => {
         });
 
         it(`should be undefined if not set`, () => {
-            aboutDetails = new AboutDetails("");
+            aboutDetails = new AboutDetails('');
             expect(aboutDetails.title).toBeUndefined();
         });
 

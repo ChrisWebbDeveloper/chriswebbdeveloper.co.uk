@@ -4,6 +4,6 @@ export class AboutDetails {
 
     constructor(aboutMe: string, title?: string) {
         if (title) this.title = title;
-        this.aboutMe = aboutMe.split("\n");
+        this.aboutMe = aboutMe.split('\n');
     }
 }

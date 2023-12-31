@@ -17,9 +17,9 @@ import { Skill } from '../models/skill';
 export class AboutMeComponent {
   @Input() details!: AboutDetails;
   @Input() skills!: Skill[];
-  title: string = "About Me";
+  title: string = 'About Me';
 
   ngOnInit() {
-    if (this.details && this.details.title) this.title = "I'm Chris, a " + this.details.title;
+    if (this.details && this.details.title) this.title = `I'm Chris, a ${this.details.title}`;
   }
 }

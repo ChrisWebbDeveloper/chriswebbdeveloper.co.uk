@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
 })
 export class ProjectComponent {
   @Input() project!: Project;
-  @Input() selectedTech: string = "all";
+  @Input() selectedTech: string = 'all';
   @Input() selectedTechMethod!: Function;
   @Output() selectedTechChange = new EventEmitter<string>();
 

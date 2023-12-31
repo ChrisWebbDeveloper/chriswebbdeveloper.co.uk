@@ -7,7 +7,7 @@ import { Project } from '../models/project';
 })
 export class ProjectContainsTechPipe implements PipeTransform {
   transform(projects: Project[], tech: string): Project[] {
-    if (tech == "all") return projects;
+    if (tech == 'all') return projects;
     else return projects.filter(project => project.techStack.includes(tech));
   }
 }

@@ -9,7 +9,7 @@ export class Project {
 
     constructor(project: {title: string, formatted_description: string, link?: string, start_date: Date, end_date?: Date, tech_stack: string[]}) {
         this.title = project.title;
-        this.description = project.formatted_description ? project.formatted_description.split("\n") : [];
+        this.description = project.formatted_description ? project.formatted_description.split('\n') : [];
         if (project.link) this.link = project.link;
         this.startDate = new Date(project.start_date);
         if (project.end_date) this.endDate = new Date(project.end_date);
@@ -17,7 +17,7 @@ export class Project {
     }
 
     private getDateFormatted(date: Date): string {
-        return date.toLocaleDateString("default", { month: "short", year: "numeric" });
+        return date.toLocaleDateString('default', { month: 'short', year: 'numeric' });
     }
 
     public getStartDateFormatted(): string {
@@ -25,6 +25,6 @@ export class Project {
     }
 
     public getEndDateFormatted(): string {
-        return this.endDate ? this.getDateFormatted(this.endDate) : "Present";
+        return this.endDate ? this.getDateFormatted(this.endDate) : 'Present';
     }
 }

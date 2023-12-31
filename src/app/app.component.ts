@@ -48,7 +48,7 @@ export class AppComponent {
         this.projects = val.projects.map(project => new Project(project));
         this.contactDetails = new ContactDetails(val.contact_details);
       },
-      error: err => alert("Content could not be found at this time. Please try again later.")
+      error: err => alert('Content could not be found at this time. Please try again later.')
     });
   }
 }
