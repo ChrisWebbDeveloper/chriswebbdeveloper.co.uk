@@ -17,8 +17,8 @@ export interface Data {
         title: string;
         formatted_description: string;
         link?: string | null;
-        start_date: Date;
-        end_date?: Date | null;
+        start_date: string;
+        end_date?: string | null;
         tech_stack: string[];
     }[];
 
