@@ -4,9 +4,14 @@ describe('Cv', () => {
     let cv: Cv;
     const pdf: string = 'pdf';
     const docx: string = 'docx';
+    let cvObj: {
+        pdf?: string | null,
+        docx?: string | null
+    };
 
     beforeEach(async () => {
-        cv = new Cv({pdf, docx});
+        cvObj = {pdf, docx};
+        cv = new Cv(cvObj);
     });
 
     describe(`Component`, () => {
@@ -20,8 +25,15 @@ describe('Cv', () => {
             expect(cv.pdf).toBeTruthy();
         });
 
-        it('should be undefined if not set', () => {
-            cv = new Cv({});
+        it(`should be undefined if not set in constructor`, () => {
+            cvObj.pdf = undefined;
+            cv = new Cv(cvObj);
+            expect(cv.pdf).toBeUndefined();
+        });
+
+        it(`should be undefined if null in constructor`, () => {
+            cvObj.pdf = null;
+            cv = new Cv(cvObj);
             expect(cv.pdf).toBeUndefined();
         });
 
@@ -35,8 +47,15 @@ describe('Cv', () => {
             expect(cv.docx).toBeTruthy();
         });
 
-        it('should be undefined if not set', () => {
-            cv = new Cv({});
+        it(`should be undefined if not set in constructor`, () => {
+            cvObj.docx = undefined;
+            cv = new Cv(cvObj);
+            expect(cv.docx).toBeUndefined();
+        });
+
+        it(`should be undefined if null in constructor`, () => {
+            cvObj.docx = null;
+            cv = new Cv(cvObj);
             expect(cv.docx).toBeUndefined();
         });
 
