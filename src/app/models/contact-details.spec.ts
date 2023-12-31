@@ -26,7 +26,7 @@ describe(`ContactDetails`, () => {
     });
 
     describe(`email`, () => {
-        it('should be included as a property', () => {
+        it(`should be included as a property`, () => {
             expect(contactDetails.email).toBeTruthy();
         });
 
@@ -42,13 +42,13 @@ describe(`ContactDetails`, () => {
             expect(contactDetails.email).toBeUndefined();
         });
 
-        it('should be set to the value provided in the constructor', () => {
+        it(`should be set to the value provided in the constructor`, () => {
             expect(contactDetails.email).toEqual(email);
         });
     });
 
     describe(`linkedin`, () => {
-        it('should be included as a property', () => {
+        it(`should be included as a property`, () => {
             expect(contactDetails.linkedin).toBeTruthy();
         });
 
@@ -64,13 +64,13 @@ describe(`ContactDetails`, () => {
             expect(contactDetails.linkedin).toBeUndefined();
         });
 
-        it('should be set to the value provided in the constructor', () => {
+        it(`should be set to the value provided in the constructor`, () => {
             expect(contactDetails.linkedin).toEqual(linkedin);
         });
     });
 
     describe(`github`, () => {
-        it('should be included as a property', () => {
+        it(`should be included as a property`, () => {
             expect(contactDetails.github).toBeTruthy();
         });
 
@@ -86,25 +86,25 @@ describe(`ContactDetails`, () => {
             expect(contactDetails.github).toBeUndefined();
         });
 
-        it('should be set to the value provided in the constructor', () => {
+        it(`should be set to the value provided in the constructor`, () => {
             expect(contactDetails.github).toEqual(github);
         });
     });
 
     describe(`getLink()`, () => {
-        it('should be included as a method', () => {
+        it(`should be included as a method`, () => {
             //@ts-expect-error
             expect(contactDetails.getLink).toBeTruthy();
         });
 
-        it ('should return the link concatenated with the base if the link is a valid string', () => {
+        it(`should return the link concatenated with the base if the link is a valid string`, () => {
             const link = 'link';
             const base = 'base';
             //@ts-expect-error
             expect(contactDetails.getLink(link, base)).toEqual(base + link);
         });
 
-        it ('should return null if the link is undefined or empty', () => {
+        it(`should return null if the link is undefined or empty`, () => {
             let link = undefined;
             const base = 'base';
             //@ts-expect-error
@@ -121,7 +121,7 @@ describe(`ContactDetails`, () => {
     });
 
     describe(`getLinkedinLink()`, () => {
-        it('should be included as a method', () => {
+        it(`should be included as a method`, () => {
             expect(contactDetails.getLinkedinLink).toBeTruthy();
         });
 
@@ -137,7 +137,7 @@ describe(`ContactDetails`, () => {
     });
 
     describe(`getGithubLink()`, () => {
-        it('should be included as a method', () => {
+        it(`should be included as a method`, () => {
             expect(contactDetails.getGithubLink).toBeTruthy();
         });
 

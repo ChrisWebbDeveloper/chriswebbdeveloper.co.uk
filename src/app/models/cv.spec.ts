@@ -21,7 +21,7 @@ describe('Cv', () => {
     });
 
     describe(`pdf`, () => {
-        it('should be included as a property', () => {
+        it(`should be included as a property`, () => {
             expect(cv.pdf).toBeTruthy();
         });
 
@@ -37,13 +37,13 @@ describe('Cv', () => {
             expect(cv.pdf).toBeUndefined();
         });
 
-        it('should be set to the value provided in the constructor', () => {
+        it(`should be set to the value provided in the constructor`, () => {
             expect(cv.pdf).toEqual(pdf);
         });
     });
 
     describe(`docx`, () => {
-        it('should be included as a property', () => {
+        it(`should be included as a property`, () => {
             expect(cv.docx).toBeTruthy();
         });
 
@@ -59,7 +59,7 @@ describe('Cv', () => {
             expect(cv.docx).toBeUndefined();
         });
 
-        it('should be set to the value provided in the constructor', () => {
+        it(`should be set to the value provided in the constructor`, () => {
             expect(cv.docx).toEqual(docx);
         });
     });

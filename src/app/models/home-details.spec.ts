@@ -16,17 +16,17 @@ describe('HomeDetails', () => {
     });
 
     describe(`name`, () => {
-        it('should be included as a property', () => {
+        it(`should be included as a property`, () => {
             expect(homeDetails.name).toBeTruthy();
         });
 
-        it('should be set to the value provided in the constructor', () => {
+        it(`should be set to the value provided in the constructor`, () => {
             expect(homeDetails.name).toEqual(name);
         });
     });
 
     describe(`blurb`, () => {
-        it('should be included as a property', () => {
+        it(`should be included as a property`, () => {
             expect(homeDetails.blurb).toBeTruthy();
         });
 
@@ -40,7 +40,7 @@ describe('HomeDetails', () => {
             expect(homeDetails.blurb).toBeUndefined();
         });
 
-        it('should be set to the value provided in the constructor', () => {
+        it(`should be set to the value provided in the constructor`, () => {
             expect(homeDetails.blurb).toEqual(blurb);
         });
     });

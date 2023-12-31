@@ -36,7 +36,7 @@ describe(`AboutDetails`, () => {
     });
 
     describe(`aboutMe`, () => {
-        it (`should be included as a property`, () => {
+        it(`should be included as a property`, () => {
             expect(aboutDetails.aboutMe).toBeTruthy();
         });
 
