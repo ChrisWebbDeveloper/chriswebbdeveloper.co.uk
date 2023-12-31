@@ -30,8 +30,13 @@ describe('HomeDetails', () => {
             expect(homeDetails.blurb).toBeTruthy();
         });
 
-        it('should be undefined if not set', () => {
+        it(`should be undefined if not set in constructor`, () => {
             homeDetails = new HomeDetails(name);
+            expect(homeDetails.blurb).toBeUndefined();
+        });
+
+        it(`should be undefined if null in constructor`, () => {
+            homeDetails = new HomeDetails(name, null);
             expect(homeDetails.blurb).toBeUndefined();
         });
 
