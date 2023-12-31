@@ -2,13 +2,13 @@ import { ContactDetails } from './contact-details';
 
 describe(`ContactDetails`, () => {
     let contactDetails: ContactDetails;
-    const email = 'test@email.com';
-    const linkedin = 'LinkedIn';
-    const github = 'Github';
+    const email: string = 'test@email.com';
+    const linkedin: string = 'LinkedIn';
+    const github: string = 'Github';
     let getLinkSpy: jasmine.Spy;
 
     beforeEach(async () => {
-        contactDetails = new ContactDetails({email: email, linkedin: linkedin, github: github});
+        contactDetails = new ContactDetails({email, linkedin, github});
         //@ts-expect-error
         getLinkSpy = spyOn(contactDetails, 'getLink').and.callThrough();
     });

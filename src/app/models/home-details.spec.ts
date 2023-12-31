@@ -2,8 +2,8 @@ import { HomeDetails } from './home-details';
 
 describe('HomeDetails', () => {
     let homeDetails: HomeDetails;
-    const name = 'Name';
-    const blurb = 'Blurb';
+    const name: string = 'Name';
+    const blurb: string = 'Blurb';
 
     beforeEach(async () => {
         homeDetails = new HomeDetails(name, blurb);

@@ -2,11 +2,11 @@ import { Cv } from './cv';
 
 describe('Cv', () => {
     let cv: Cv;
-    const pdf = 'pdf';
-    const docx = 'docx';
+    const pdf: string = 'pdf';
+    const docx: string = 'docx';
 
     beforeEach(async () => {
-        cv = new Cv({pdf: pdf, docx: docx});
+        cv = new Cv({pdf, docx});
     });
 
     describe(`Component`, () => {
