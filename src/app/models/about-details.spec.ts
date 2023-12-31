@@ -20,8 +20,13 @@ describe(`AboutDetails`, () => {
             expect(aboutDetails.title).toBeTruthy();
         });
 
-        it(`should be undefined if not set`, () => {
-            aboutDetails = new AboutDetails('');
+        it(`should be undefined if not set in constructor`, () => {
+            aboutDetails = new AboutDetails(aboutMe);
+            expect(aboutDetails.title).toBeUndefined();
+        });
+
+        it(`should be undefined if null in constructor`, () => {
+            aboutDetails = new AboutDetails(aboutMe, null);
             expect(aboutDetails.title).toBeUndefined();
         });
 
@@ -35,11 +40,11 @@ describe(`AboutDetails`, () => {
             expect(aboutDetails.aboutMe).toBeTruthy();
         });
 
-        it(`should be an array, with each item set to the string value split along line breaks (\\n)`, () => {
-            const textAsArray = aboutMe.split('\n');
+        it(`should be an array, with each item set to the value passed into the constructor split along line breaks (\\n)`, () => {
+            const aboutMeAsArray = aboutMe.split('\n');
 
             for (let i = 0; i < aboutDetails.aboutMe.length; i++) {
-                expect(aboutDetails.aboutMe[i]).toEqual(textAsArray[i]);
+                expect(aboutDetails.aboutMe[i]).toEqual(aboutMeAsArray[i]);
             };
         });
     });
