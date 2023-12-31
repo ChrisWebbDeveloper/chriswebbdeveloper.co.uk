@@ -1,12 +1,12 @@
 export interface Data {
     name: string;
-    title?: string;
-    blurb?: string;
+    title?: string | null;
+    blurb?: string | null;
 
     contact_details: {
-        email?: string;
-        linkedin?: string;
-        github?: string;
+        email?: string | null;
+        linkedin?: string | null;
+        github?: string | null;
     };
 
     about_me: {
@@ -16,14 +16,14 @@ export interface Data {
     projects: {
         title: string;
         formatted_description: string;
-        link?: string;
+        link?: string | null;
         start_date: Date;
-        end_date?: Date;
+        end_date?: Date | null;
         tech_stack: string[];
     }[];
 
     skills: {
         name: string;
-        exp?: number;
+        exp?: number | null;
     }[];
 }
