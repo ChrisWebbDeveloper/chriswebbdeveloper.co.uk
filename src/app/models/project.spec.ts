@@ -55,7 +55,7 @@ describe('Project', () => {
             expect(project.description).toBeTruthy();
         });
 
-        it(`should be an array, with each item set to the value passed into the constructor splitalong line breaks (\\n)`, () => {
+        it(`should be an array, with each item set to the value passed into the constructor split along line breaks (\\n)`, () => {
             const descAsArray = formattedDescription.split('\n');
 
             for (let i = 0; i < project.description.length; i++) {
