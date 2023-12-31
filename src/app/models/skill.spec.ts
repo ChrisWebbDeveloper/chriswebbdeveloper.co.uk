@@ -1,6 +1,6 @@
 import { Skill } from './skill';
 
-describe(`AboutDetails`, () => {
+describe('Skill', () => {
     let skill: Skill;
     const name: string = 'Name';
     const exp: number = 50;

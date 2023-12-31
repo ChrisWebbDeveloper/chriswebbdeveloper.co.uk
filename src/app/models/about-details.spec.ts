@@ -1,6 +1,6 @@
 import { AboutDetails } from './about-details';
 
-describe(`AboutDetails`, () => {
+describe('AboutDetails', () => {
     let aboutDetails: AboutDetails;
     const title: string = 'Test Title';
     const aboutMe: string = 'This\n is \n a \n test\n string';

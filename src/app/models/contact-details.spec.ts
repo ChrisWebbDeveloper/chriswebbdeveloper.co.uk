@@ -1,6 +1,6 @@
 import { ContactDetails } from './contact-details';
 
-describe(`ContactDetails`, () => {
+describe('ContactDetails', () => {
     let contactDetails: ContactDetails;
     const email: string = 'test@email.com';
     const linkedin: string = 'LinkedIn';
