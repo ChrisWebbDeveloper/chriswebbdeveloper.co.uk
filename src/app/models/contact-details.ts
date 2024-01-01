@@ -14,11 +14,11 @@ export class ContactDetails {
         else return null;
     }
 
-    public getLinkedinLink(): string | null {
+    getLinkedinLink(): string | null {
         return this.getLink(this.linkedin, 'https://linkedin.com/in/');
     }
 
-    public getGithubLink(): string | null {
+    getGithubLink(): string | null {
         return this.getLink(this.github, 'https://github.com/');
     }
 }

@@ -20,11 +20,11 @@ export class Project {
         return date.toLocaleDateString('default', { month: 'short', year: 'numeric' });
     }
 
-    public getStartDateFormatted(): string {
+    getStartDateFormatted(): string {
         return this.getDateFormatted(this.startDate);
     }
 
-    public getEndDateFormatted(): string {
+    getEndDateFormatted(): string {
         return this.endDate ? this.getDateFormatted(this.endDate) : 'Present';
     }
 }
