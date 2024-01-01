@@ -7,25 +7,31 @@ import { catchError, map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ImageService {
-  exts: string[] = [ 'jpg', 'gif', 'png'];
-  currentIndex: number = 0;
+  private exts: string[] = [ 'jpg', 'gif', 'png'];
+  private currentIndex: number = 0;
 
   constructor(private http: HttpClient) {
   }
 
-  public getImage(name: string): Observable<string | undefined> {
+  private getImgUrl(name: string): string {
     let fileName: string = name.toLowerCase().replaceAll(' ', '-').replaceAll('(', '').replaceAll(')', '')
-    const imgUrl = `../../assets/images/${fileName}.${this.exts[this.currentIndex]}`;
+    if (fileName.length > 0) return `../../assets/images/${fileName}.${this.exts[this.currentIndex]}`;
+    else return '';
+  }
 
-    return this.http.get(imgUrl, { observe:'response', responseType:'blob' }).pipe(
-      map(val => {
-        return imgUrl;
-      }),
-      catchError(err => {
-        this.currentIndex++;
-        if (this.currentIndex < this.exts.length - 1) return this.getImage(name);
-        else return of(undefined);
-      })
-    );
+  getImage(name: string): Observable<string | undefined> {
+    const imgUrl = this.getImgUrl(name);
+
+    if (imgUrl.length > 0) {
+      return this.http.get(imgUrl, {observe: 'response', responseType: 'blob'}).pipe(
+        map(val => imgUrl),
+        catchError(err => {
+          this.currentIndex++;
+          if (this.currentIndex < this.exts.length) return this.getImage(name);
+          else return of(undefined);
+        })
+      );
+    }
+    else return of(undefined);
   }
 }
