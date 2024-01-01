@@ -72,7 +72,7 @@ describe('ImageService', () => {
             expect(service.getImgUrl).toBeDefined();
         });
 
-        it(`should take the given name as lower case, remove any parentheses, replace spaces with hyphens, and return the result with the image assets path and extension based on the currentIndex`, () => {
+        it(`should take the given name, format it, and return the result with the image assets path and extension based on the currentIndex`, () => {
             const val = name.toLowerCase().replaceAll(' ', '-').replaceAll('(', '').replace(')', '');
             //@ts-expect-error
             const imgUrlStr = `../../assets/images/${val}.${service.exts[service.currentIndex]}`;
