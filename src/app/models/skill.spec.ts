@@ -14,7 +14,7 @@ describe('Skill', () => {
         skill = new Skill(skillObj)
     });
 
-    describe(`Component`, () => {
+    describe(`Class`, () => {
         it(`should create an instance`, () => {
             expect(skill).toBeTruthy();
         });

@@ -19,7 +19,7 @@ describe('ContactDetails', () => {
         getLinkSpy = spyOn(contactDetails, 'getLink').and.callThrough();
     });
 
-    describe(`Component`, () => {
+    describe(`Class`, () => {
         it(`should create an instance`, () => {
             expect(contactDetails).toBeTruthy();
         });

@@ -9,7 +9,7 @@ describe('HomeDetails', () => {
         homeDetails = new HomeDetails(name, blurb);
     });
 
-    describe(`Component`, () => {
+    describe(`Class`, () => {
         it(`should create an instance`, () => {
             expect(homeDetails).toBeTruthy();
         });

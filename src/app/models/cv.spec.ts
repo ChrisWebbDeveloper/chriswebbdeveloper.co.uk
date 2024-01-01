@@ -14,7 +14,7 @@ describe('Cv', () => {
         cv = new Cv(cvObj);
     });
 
-    describe(`Component`, () => {
+    describe(`Class`, () => {
         it(`should create an instance`, () => {
             expect(cv).toBeTruthy();
         });

@@ -34,7 +34,7 @@ describe('Project', () => {
         getDateFormattedSpy = spyOn(project, 'getDateFormatted').and.callThrough();
     });
 
-    describe(`Component`, () => {
+    describe(`Class`, () => {
         it(`should create an instance`, () => {
             expect(project).toBeTruthy();
         });
