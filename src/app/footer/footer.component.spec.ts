@@ -11,7 +11,7 @@ describe('FooterComponent', () => {
             imports: [FooterComponent]
         })
         .compileComponents();
-        
+
         fixture = TestBed.createComponent(FooterComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
@@ -54,11 +54,11 @@ describe('FooterComponent', () => {
         });
     });
 
-    describe(`html`, () => {
+    describe(`HTML`, () => {
         it(`should be a footer element`, () => {
             const element: HTMLElement = fixture.nativeElement;
-            const footerElem: HTMLElement | null = element.querySelector('footer')
-            expect(footerElem).not.toBeNull();
+            const footer: HTMLElement | null = element.querySelector('footer')
+            expect(footer).toBeTruthy();
         });
 
         it(`should include the copyright symbol (©)`, () => {
@@ -68,8 +68,8 @@ describe('FooterComponent', () => {
         });
 
         it(`should include only the buildYear if the buildYear matches the currentYear`, () => {
-            const year = 2000;
-            const yearStr = year.toString();
+            const year: number = 2000;
+            const yearStr: string = year.toString();
             component.buildYear = year;
             component.currentYear = year;
             fixture.detectChanges();
@@ -83,10 +83,9 @@ describe('FooterComponent', () => {
         it(`should include both the buildYear and currentYear separated by a hyphen if they are different`, () => {
             component.buildYear = 2000;
             component.currentYear = 2028;
+            const buildYrStr: string = component.buildYear.toString();
+            const currentYrStr: string = component.currentYear.toString();
             fixture.detectChanges();
-
-            const buildYrStr = component.buildYear.toString();
-            const currentYrStr = component.currentYear.toString();
 
             const element: HTMLElement = fixture.nativeElement;
             const span: HTMLElement = element.querySelectorAll('span')[0];
@@ -100,7 +99,7 @@ describe('FooterComponent', () => {
         });
 
         it(`should include the version prepended with 'v'`, () => {
-            const version = '1.2.3'
+            const version: string = '1.2.3';
             component.version = version;
             fixture.detectChanges();
 
