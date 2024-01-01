@@ -3,7 +3,7 @@ export class ContactDetails {
     linkedin?: string;
     github?: string;
 
-    constructor(contacts: {email?: string | null, linkedin?: string | null, github?: string | null}) {
+    constructor(contacts: {email?: string | null, linkedin?: string | null, github?: string | null, [x: string | number | symbol]: unknown}) {
         if (contacts.email) this.email = contacts.email;
         if (contacts.linkedin) this.linkedin = contacts.linkedin;
         if (contacts.github) this.github = contacts.github;

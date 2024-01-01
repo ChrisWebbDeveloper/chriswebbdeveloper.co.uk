@@ -7,7 +7,7 @@ export class Project {
     endDate?: Date;
     techStack: string[];
 
-    constructor(project: {title: string, formatted_description: string, link?: string | null, start_date: string, end_date?: string | null, tech_stack: string[]}) {
+    constructor(project: {title: string, formatted_description: string, link?: string | null, start_date: string, end_date?: string | null, tech_stack: string[], [x: string | number | symbol]: unknown}) {
         this.title = project.title;
         this.description = project.formatted_description.split('\n');
         if (project.link) this.link = project.link;
