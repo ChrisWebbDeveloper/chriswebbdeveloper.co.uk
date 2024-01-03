@@ -3,11 +3,11 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { DataService } from './data.service';
 import { Data } from '../models/data';
 import { HttpErrorResponse } from '@angular/common/http';
+ import { environment } from '../../environments/environment.development';
 
 describe('DataService', () => {
     let service: DataService;
     let httpTestingCtrl: HttpTestingController;
-    const dataUrl = `https://raw.githubusercontent.com/ChrisWebbDeveloper/cv/main/christopher-webb-cv.json`;
     const data: Data = {
         "name": "Chris Webb",
         "title": "Software & Web Developer",
@@ -608,7 +608,7 @@ describe('DataService', () => {
         it(`should make an HTTP GET request using the HttpClient`, () => {
             service.getData().subscribe();
 
-            const req = httpTestingCtrl.expectOne(dataUrl);
+            const req = httpTestingCtrl.expectOne(environment.dataUrl);
             expect(req.request.method).toEqual('GET');
             req.flush(data);
         });
@@ -616,8 +616,8 @@ describe('DataService', () => {
         it(`should pass in the environment's dataUrl to the HttpClient's 'get' method`, () => {
             service.getData().subscribe();
 
-            const req = httpTestingCtrl.expectOne(dataUrl);
-            expect(req.request.url).toEqual(dataUrl);          
+            const req = httpTestingCtrl.expectOne(environment.dataUrl);
+            expect(req.request.url).toEqual(environment.dataUrl);
             req.flush(data);
         });
 
@@ -626,7 +626,7 @@ describe('DataService', () => {
                 next: val => expect(val).toEqual(data)
             });
 
-            const req = httpTestingCtrl.expectOne(dataUrl);
+            const req = httpTestingCtrl.expectOne(environment.dataUrl);
             req.flush(data);
         });
 
@@ -641,7 +641,7 @@ describe('DataService', () => {
               },
             });
 
-            const req = httpTestingCtrl.expectOne(dataUrl);
+            const req = httpTestingCtrl.expectOne(environment.dataUrl);
 
             // Respond with mock error
             req.flush(errMsg, {status: 404, statusText: 'Not Found'});

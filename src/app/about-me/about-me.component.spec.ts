@@ -7,6 +7,9 @@ import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
 describe('AboutMeComponent', () => {
+    let component: AboutMeComponent;
+    let fixture: ComponentFixture<AboutMeComponent>;
+    let title: string;
     const details: AboutDetails = new AboutDetails('Test about me\nstring', 'Test title');
     const skills: Skill[] = [
         new Skill({name: 'C#', exp: 85}),
@@ -15,9 +18,6 @@ describe('AboutMeComponent', () => {
         new Skill({name: 'JavaScript', exp: 60}),
         new Skill({name: 'HTML5', exp: 20})
     ];
-    let component: AboutMeComponent;
-    let fixture: ComponentFixture<AboutMeComponent>;
-    let title: string;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
