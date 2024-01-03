@@ -1,9 +1,8 @@
-<div class="container component-padding">
+<div class="container component-padding" *ngIf="details || cv">
     <h2>Contact</h2>
 
-    <p class="my-4">Want to get in touch? I am available on at the links below:</p>
-
-    <div class="row mb-4" *ngIf="details">
+    <div class="row mb-4" *ngIf="details && (details.email || details.linkedin || details.github)">
+        <p class="my-4">Want to get in touch? I am available at the links below:</p>
         <div class="col-12 col-lg-4">
             <p *ngIf="details.email"><a [href]="'mailto:' + details.email" class="link-secondary"><i class="bi bi-envelope-fill"></i> &nbsp; {{details.email}}</a></p>
         </div>
@@ -15,9 +14,9 @@
         </div>
     </div>
 
-    <div class="row" *ngIf="cv">
+    <div class="row" *ngIf="cv && (cv.pdf || cv.docx)">
         <h3>CV</h3>
-        <p class="mb-4">My CV is available below in pdf and docx formats:</p>
+        <p class="my-4">You can find my CV below:</p>
         <div class="row">
             <div class="col-12 col-lg-6">
                 <p *ngIf="cv.pdf"><a [href]="cv.pdf" class="link-secondary" download target="_blank"><i class="bi bi-filetype-pdf"></i> &nbsp; Download PDF</a></p>
