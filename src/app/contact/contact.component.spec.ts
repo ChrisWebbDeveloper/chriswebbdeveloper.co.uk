@@ -62,16 +62,18 @@ describe('ContactComponent', () => {
 
     describe(`HTML`, () => {
         it(`should only be populated if the 'details' or 'cv' properties are available`, () => {
-            const element: HTMLElement = fixture.nativeElement;
-            const initDivs: NodeListOf<HTMLElement> = element.querySelectorAll(':scope > div');
-            expect(initDivs.length).toEqual(1);
+            function getDivs(): NodeListOf<HTMLElement> {
+                const element: HTMLElement = fixture.nativeElement;
+                return element.querySelectorAll(':scope > div');
+            };
+
+            expect(getDivs().length).toEqual(1);
 
             //@ts-expect-error
             component.details = undefined;
             component.cv = undefined;
             fixture.detectChanges();
-            const removedDivs: NodeListOf<HTMLElement> = element.querySelectorAll(':scope > div');
-            expect(removedDivs.length).toEqual(0);
+            expect(getDivs().length).toEqual(0);
         });
 
         it(`should include a title with suitable content`, () => {
@@ -82,15 +84,17 @@ describe('ContactComponent', () => {
         });
 
         it(`should only display the contact details if the 'details' property is set, along with any of its properties ('email', 'linkedin' or 'github')`, () => {
-            const element: HTMLElement = fixture.nativeElement;
-            const initDivs: NodeListOf<HTMLElement> = element.querySelectorAll(':scope > div > div');
-            expect(initDivs.length).toEqual(2);
+            function getDivs(): NodeListOf<HTMLElement> {
+                const element: HTMLElement = fixture.nativeElement;
+                return element.querySelectorAll(':scope > div > div');
+            };
+
+            expect(getDivs().length).toEqual(2);
 
             //@ts-expect-error
             component.details = undefined;
             fixture.detectChanges();
-            const removedDivs: NodeListOf<HTMLElement> = element.querySelectorAll(':scope > div > div');
-            expect(removedDivs.length).toEqual(1);
+            expect(getDivs().length).toEqual(1);
         });
 
         it(`should include a suitable message for the Contacts section`, () => {
@@ -102,15 +106,17 @@ describe('ContactComponent', () => {
         });
 
         it(`should only include the email link if the 'details' has its 'email' property set`, () => {
-            const element: HTMLElement = fixture.nativeElement;
-            const contactsElem: HTMLElement = element.querySelectorAll(':scope > div > div')[0] as HTMLElement;
-            const initContacts: NodeListOf<HTMLAnchorElement> = contactsElem!.querySelectorAll('a');
-            expect(initContacts.length).toEqual(3);
+            function getContacts(): NodeListOf<HTMLAnchorElement> {
+                const element: HTMLElement = fixture.nativeElement;
+                const contactsElem: HTMLElement = element.querySelectorAll(':scope > div > div')[0] as HTMLElement;
+                return contactsElem!.querySelectorAll('a');
+            };
+
+            expect(getContacts().length).toEqual(3);
 
             component.details.email = undefined;
             fixture.detectChanges();
-            const remEmailContacts: NodeListOf<HTMLAnchorElement> = contactsElem!.querySelectorAll('a');
-            expect(remEmailContacts.length).toEqual(2);
+            expect(getContacts().length).toEqual(2);
         });
 
         it(`should open an email to contact the specified 'email' property`, () => {
@@ -130,16 +136,17 @@ describe('ContactComponent', () => {
         });
 
         it(`should only include the LinkedIn link if the 'details' has its 'linkedin' property set`, () => {
-            const element: HTMLElement = fixture.nativeElement;
-            const contactsElem: HTMLElement = element.querySelectorAll(':scope > div > div')[0] as HTMLElement;
-            const initContacts: NodeListOf<HTMLElement> = contactsElem!.querySelectorAll('a');
-            expect(initContacts.length).toEqual(3);
+            function getContacts(): NodeListOf<HTMLElement> {
+                const element: HTMLElement = fixture.nativeElement;
+                const contactsElem: HTMLElement = element.querySelectorAll(':scope > div > div')[0] as HTMLElement;
+                return contactsElem!.querySelectorAll('a');
+            };
+
+            expect(getContacts().length).toEqual(3);
 
             component.details.linkedin = undefined;
             fixture.detectChanges();
-
-            const remLIContacts: NodeListOf<HTMLElement> = contactsElem!.querySelectorAll('a');
-            expect(remLIContacts.length).toEqual(2);
+            expect(getContacts().length).toEqual(2);
         });
 
         it(`should open LinkedIn to the specified 'linkedin' property in a new tab`, () => {
@@ -161,15 +168,17 @@ describe('ContactComponent', () => {
         });
 
         it(`should only include the Github link if the 'details' has its 'github' property set`, () => {
-            const element: HTMLElement = fixture.nativeElement;
-            const contactsElem: HTMLElement = element.querySelectorAll(':scope > div > div')[0] as HTMLElement;
-            const initContacts: NodeListOf<HTMLElement> = contactsElem!.querySelectorAll('a');
-            expect(initContacts.length).toEqual(3);
+            function getContacts(): NodeListOf<HTMLElement> {
+                const element: HTMLElement = fixture.nativeElement;
+                const contactsElem: HTMLElement = element.querySelectorAll(':scope > div > div')[0] as HTMLElement;
+                return contactsElem!.querySelectorAll('a');
+            };
+
+            expect(getContacts().length).toEqual(3);
 
             component.details.github = undefined;
             fixture.detectChanges();
-            const remGHContacts: NodeListOf<HTMLElement> = contactsElem!.querySelectorAll('a');
-            expect(remGHContacts.length).toEqual(2);
+            expect(getContacts().length).toEqual(2);
         });
 
         it(`should open Github to the specified 'github' property in a new tab`, () => {
@@ -191,14 +200,16 @@ describe('ContactComponent', () => {
         });
 
         it(`should only display the cv details if the 'cv' property is set, along with any of its properties ('pdf' or 'docx')`, () => {
-            const element: HTMLElement = fixture.nativeElement;
-            const initDivs: NodeListOf<HTMLElement> = element.querySelectorAll(':scope > div > div');
-            expect(initDivs.length).toEqual(2);
+            function getDivs(): NodeListOf<HTMLElement> {
+                const element: HTMLElement = fixture.nativeElement;
+                return element.querySelectorAll(':scope > div > div');
+            };
+
+            expect(getDivs().length).toEqual(2);
 
             component.cv = undefined;
             fixture.detectChanges();
-            const removedDivs: NodeListOf<HTMLElement> = element.querySelectorAll(':scope > div > div');
-            expect(removedDivs.length).toEqual(1);
+            expect(getDivs().length).toEqual(1);
         });
 
         it(`should include a suitable message for the CVs section`, () => {
@@ -209,17 +220,18 @@ describe('ContactComponent', () => {
         });
 
         it(`should only display the pdf link if it is included`, () => {
-            const element: HTMLElement = fixture.nativeElement;
-            const cvDivs: HTMLElement = element.querySelectorAll(':scope > div > div')[1] as HTMLElement;
-            const initCvLinks: NodeListOf<HTMLAnchorElement> = cvDivs.querySelectorAll('a');
-            expect(initCvLinks.length).toEqual(2);
+            function getCvLinks(): NodeListOf<HTMLAnchorElement> {
+                const element: HTMLElement = fixture.nativeElement;
+                const cvDivs: HTMLElement = element.querySelectorAll(':scope > div > div')[1] as HTMLElement;
+                return cvDivs.querySelectorAll('a');
+            };
+
+            expect(getCvLinks().length).toEqual(2);
 
             //@ts-expect-error
             component.cv.pdf = undefined;
             fixture.detectChanges();
-
-            const remPdfLinks: NodeListOf<HTMLAnchorElement> = cvDivs.querySelectorAll('a');
-            expect(remPdfLinks.length).toEqual(1);
+            expect(getCvLinks().length).toEqual(1);
         });
 
         it(`should download the pdf link if it is clicked`, () => {
@@ -242,17 +254,18 @@ describe('ContactComponent', () => {
         });
 
         it(`should only display the docx link if it is included`, () => {
-            const element: HTMLElement = fixture.nativeElement;
-            const cvDivs: HTMLElement = element.querySelectorAll(':scope > div > div')[1] as HTMLElement;
-            const initCvLinks: NodeListOf<HTMLAnchorElement> = cvDivs.querySelectorAll('a');
-            expect(initCvLinks.length).toEqual(2);
+            function getCvLinks(): NodeListOf<HTMLAnchorElement> {
+                const element: HTMLElement = fixture.nativeElement;
+                const cvDivs: HTMLElement = element.querySelectorAll(':scope > div > div')[1] as HTMLElement;
+                return cvDivs.querySelectorAll('a');
+            };
+
+            expect(getCvLinks().length).toEqual(2);
 
             //@ts-expect-error
             component.cv.docx = undefined;
             fixture.detectChanges();
-
-            const remDocxLinks: NodeListOf<HTMLAnchorElement> = cvDivs.querySelectorAll('a');
-            expect(remDocxLinks.length).toEqual(1);
+            expect(getCvLinks().length).toEqual(1);
         });
 
         it(`should download the docx link if it is clicked`, () => {

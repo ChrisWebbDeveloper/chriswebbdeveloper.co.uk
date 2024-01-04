@@ -118,15 +118,17 @@ describe('HomeComponent', () => {
         });
 
         it(`should only display the 'email' link if set in the contacts`, () => {
-            const element: HTMLElement = fixture.nativeElement;
-            const contactsElem: HTMLElement = element.querySelectorAll(':scope > div')[1] as HTMLElement;
-            const initLinks: NodeListOf<HTMLElement> = contactsElem.querySelectorAll('a');
-            expect(initLinks.length).toEqual(3);
+            function getLinks(): NodeListOf<HTMLElement> {
+                const element: HTMLElement = fixture.nativeElement;
+                const contactsElem: HTMLElement = element.querySelectorAll(':scope > div')[1] as HTMLElement;
+                return contactsElem.querySelectorAll('a');
+            };
+
+            expect(getLinks().length).toEqual(3);
 
             component.contacts.email = undefined;
             fixture.detectChanges();
-            const emailRmvLinks: NodeListOf<HTMLElement> = contactsElem.querySelectorAll('a');
-            expect(emailRmvLinks.length).toEqual(2);
+            expect(getLinks().length).toEqual(2);
         });
 
         it(`should open an email to the provided 'email' when clicked`, () => {
@@ -137,15 +139,17 @@ describe('HomeComponent', () => {
         });
 
         it(`should only display the 'linkedin' link if set in the contacts`, () => {
-            const element: HTMLElement = fixture.nativeElement;
-            const contacts: HTMLElement = element.querySelectorAll(':scope > div')[1] as HTMLElement;
-            const initLinks: NodeListOf<HTMLElement> = contacts.querySelectorAll('a');
-            expect(initLinks.length).toEqual(3);
+            function getLinks(): NodeListOf<HTMLElement> {
+                const element: HTMLElement = fixture.nativeElement;
+                const contactsElem: HTMLElement = element.querySelectorAll(':scope > div')[1] as HTMLElement;
+                return contactsElem.querySelectorAll('a');
+            };
+
+            expect(getLinks().length).toEqual(3);
 
             component.contacts.linkedin = undefined;
             fixture.detectChanges();
-            const emailRmvLinks: NodeListOf<HTMLElement> = contacts.querySelectorAll('a');
-            expect(emailRmvLinks.length).toEqual(2);
+            expect(getLinks().length).toEqual(2);
         });
 
         it(`should open the 'linkedin' link in a new tab when clicked`, () => {
@@ -156,15 +160,17 @@ describe('HomeComponent', () => {
         });
 
         it(`should only display the 'github' link if set in the contacts`, () => {
-            const element: HTMLElement = fixture.nativeElement;
-            const contacts: HTMLElement = element.querySelectorAll(':scope > div')[1] as HTMLElement;
-            const initLinks: NodeListOf<HTMLElement> = contacts.querySelectorAll('a');
-            expect(initLinks.length).toEqual(3);
+            function getLinks(): NodeListOf<HTMLElement> {
+                const element: HTMLElement = fixture.nativeElement;
+                const contacts: HTMLElement = element.querySelectorAll(':scope > div')[1] as HTMLElement;
+                return contacts.querySelectorAll('a');
+            };
+
+            expect(getLinks().length).toEqual(3);
 
             component.contacts.github = undefined;
             fixture.detectChanges();
-            const emailRmvLinks: NodeListOf<HTMLElement> = contacts.querySelectorAll('a');
-            expect(emailRmvLinks.length).toEqual(2);
+            expect(getLinks().length).toEqual(2);
         });
 
         it(`should open the 'linkedin' link in a new tab when clicked`, () => {

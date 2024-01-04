@@ -88,15 +88,17 @@ describe('AboutMeComponent', () => {
         });
 
         it(`should only display the content if the 'details' property is available`, () => {
-            const element: HTMLElement = fixture.nativeElement;
-            const initDiv: HTMLElement | null = element.querySelector('div');
-            expect(initDiv).toBeTruthy();
+            function getDiv(): HTMLElement | null {
+                const element: HTMLElement = fixture.nativeElement;
+                return element.querySelector('div');
+            };
+
+            expect(getDiv()).toBeTruthy();
 
             //@ts-expect-error
             component.details = undefined;
             fixture.detectChanges();
-            const detailsRmvDiv: HTMLElement | null = element.querySelector('div');
-            expect(detailsRmvDiv).toBeNull();
+            expect(getDiv()).toBeNull();
         });
 
         it(`should display the 'title' property`, () => {
