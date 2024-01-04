@@ -43,7 +43,7 @@ describe('HeaderComponent', () => {
 
         it(`should include the logo in the navbar brand`, () => {
             const element: HTMLElement = fixture.nativeElement;
-            const navbarBrand: HTMLElement | null = element.querySelector('.navbar-brand')
+            const navbarBrand: HTMLElement | null = element.querySelector('.navbar-brand');
             const img: HTMLImageElement | null = navbarBrand ? navbarBrand.querySelector('img') : null;
             expect(img?.src.includes('/assets/images/logo.png')).toBeTrue();
         });

@@ -107,7 +107,8 @@ describe('AboutMeComponent', () => {
 
         it(`should display each string in 'aboutMe' as a separate paragraph`, () => {
             const element: HTMLElement = fixture.nativeElement;
-            const paragraphs: NodeListOf<HTMLElement> = element.querySelectorAll('p');
+            const aboutMeDiv: HTMLElement = element.querySelector(':scope > div > div')!;
+            const paragraphs: NodeListOf<HTMLElement> = aboutMeDiv.querySelectorAll('p');
 
             for(let i = 0; i < paragraphs.length; i++) {
                 expect(paragraphs[i].textContent).toEqual(details.aboutMe[i]);
