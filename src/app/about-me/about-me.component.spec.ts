@@ -120,8 +120,7 @@ describe('AboutMeComponent', () => {
         it(`should include the 'Skills' Component`, () => {
             const element: DebugElement = fixture.debugElement;
             const skillsElem: DebugElement = element.query(By.directive(SkillsComponent));
-            const skillsComp: SkillsComponent = skillsElem.componentInstance;
-            expect(skillsComp).toBeTruthy();
+            expect(skillsElem).toBeTruthy();
         });
 
         it(`should pass the 'skills' property into the 'Skills' component as its 'skills' property`, () => {

@@ -52,7 +52,10 @@ export class AppComponent {
         this.projects = val.projects.map(project => new Project(project));
         this.contactDetails = new ContactDetails(val.contact_details);
       },
-      error: err => this.loading = false
+      error: err => {
+        this.loading = false;
+        this.contentFound = false;
+      }
     });
   }
 }
