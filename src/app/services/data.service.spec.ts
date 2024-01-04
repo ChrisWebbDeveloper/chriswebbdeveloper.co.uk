@@ -1,14 +1,14 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { DataService } from './data.service';
-import { Data } from '../models/data';
+import { DataObj } from '../models/data-obj';
 import { HttpErrorResponse } from '@angular/common/http';
  import { environment } from '../../environments/environment.development';
 
 describe('DataService', () => {
     let service: DataService;
     let httpTestingCtrl: HttpTestingController;
-    const data: Data = {
+    const data: DataObj = {
         "name": "Chris Webb",
         "title": "Software & Web Developer",
         "blurb": "I am a full-stack developer of software and web applications",
@@ -621,7 +621,7 @@ describe('DataService', () => {
             req.flush(data);
         });
 
-        it(`should return a json in the structure of data if successful`, () => {
+        it(`should return a json in the structure of 'DataObj' if successful`, () => {
             service.getData().subscribe({
                 next: val => expect(val).toEqual(data)
             });

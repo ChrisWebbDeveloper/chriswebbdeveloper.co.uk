@@ -1,4 +1,4 @@
-export interface Data {
+export interface DataObj {
     name: string;
     title?: string | null;
     blurb?: string | null;

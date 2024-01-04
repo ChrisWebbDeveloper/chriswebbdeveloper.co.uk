@@ -6,18 +6,18 @@ import { Project } from '../models/project';
 import { ImageService } from '../services/image.service';
 
 @Component({
-  selector: 'app-projects',
+  selector: 'app-all-projects',
   standalone: true,
   imports: [
     CommonModule,
     ProjectComponent,
     ProjectContainsTechPipe
   ],
-  templateUrl: './projects.component.html',
-  styleUrl: './projects.component.scss',
+  templateUrl: './all-projects.component.html',
+  styleUrl: './all-projects.component.scss',
   host: {'class': 'bg-dark text-white'}
 })
-export class ProjectsComponent {
+export class AllProjectsComponent {
   @Input() projects!: Project[];
   techsList: string[] = [];
   selectedTech: string = 'all';
@@ -31,7 +31,7 @@ export class ProjectsComponent {
     this.getTechsList();
   }
 
-  getProjectImages() {
+  getProjectImages(): void {
     this.projects.forEach(project => {
       this.image.getImage(project.title).subscribe({
         next: val => project.img = val

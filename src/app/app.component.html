@@ -13,10 +13,10 @@
     <ng-container *ngIf="contentFound">
         <app-header></app-header>
         <div data-bs-spy="scroll" data-bs-target=".navbar" tabindex="0">
-            <app-home id="home" [details]="homeDetails" [contacts]="contactDetails"></app-home>
-            <app-about-me id="about-me" [details]="aboutDetails" [skills]="skills"></app-about-me>
-            <app-projects id="projects" [projects]="projects"></app-projects>
-            <app-contact id="contact" [details]="contactDetails"></app-contact>
+            <app-home id="home" [details]="homeDetails!" [contacts]="contactDetails!"></app-home>
+            <app-about-me id="about-me" [details]="aboutDetails!" [skills]="skills!"></app-about-me>
+            <app-all-projects id="projects" [projects]="projects!"></app-all-projects>
+            <app-contact id="contact" [details]="contactDetails!"></app-contact>
             <app-footer></app-footer>
         </div>
     </ng-container>

@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { AboutMeComponent } from './about-me/about-me.component';
-import { ProjectsComponent } from './projects/projects.component';
+import { AllProjectsComponent } from './all-projects/all-projects.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { DataService } from './services/data.service';
-import { Data } from './models/data';
+import { DataObj } from './models/data-obj';
 import { AboutDetails } from './models/about-details';
 import { HomeDetails } from './models/home-details';
 import { Skill } from './models/skill';
@@ -22,7 +22,7 @@ import { ContactDetails } from './models/contact-details';
     HeaderComponent,
     HomeComponent,
     AboutMeComponent,
-    ProjectsComponent,
+    AllProjectsComponent,
     ContactComponent,
     FooterComponent
   ],
@@ -32,20 +32,18 @@ import { ContactDetails } from './models/contact-details';
 export class AppComponent {
   loading: boolean = true;
   contentFound: boolean = false;
-  homeDetails!: HomeDetails;
-  aboutDetails!: AboutDetails;
-  skills: Skill[] = [];
-  projects: Project[] = [];
-  contactDetails!: ContactDetails;
-  
+  homeDetails?: HomeDetails;
+  aboutDetails?: AboutDetails;
+  skills?: Skill[];
+  projects?: Project[];
+  contactDetails?: ContactDetails;
+
   constructor(private data: DataService) {
   }
 
   ngOnInit() {
-    console.log(this.homeDetails);
-
     this.data.getData().subscribe({
-      next: (val: Data) => {
+      next: (val: DataObj) => {
         this.loading = false;
         this.contentFound = true;
         this.homeDetails = new HomeDetails(val.name, val.blurb);
