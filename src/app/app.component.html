@@ -1,8 +1,23 @@
-<app-header></app-header>
-<div data-bs-spy="scroll" data-bs-target=".navbar" tabindex="0">
-    <app-home id="home" [details]="homeDetails" [contacts]="contactDetails"></app-home>
-    <app-about-me id="about-me" [details]="aboutDetails" [skills]="skills"></app-about-me>
-    <app-projects id="projects" [projects]="projects"></app-projects>
-    <app-contact id="contact" [details]="contactDetails"></app-contact>
-    <app-footer></app-footer>
+<div class="window-center" *ngIf="loading">
+    <div class="spinner-border text-secondary" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
 </div>
+
+<ng-container *ngIf="!loading">
+    <div class="window-center" *ngIf="!contentFound">
+        <h1>Chris Webb Developer</h1>
+        <h5 class="text-danger">Content could not be found at this time. Please try again later</h5>
+    </div>
+
+    <ng-container *ngIf="contentFound">
+        <app-header></app-header>
+        <div data-bs-spy="scroll" data-bs-target=".navbar" tabindex="0">
+            <app-home id="home" [details]="homeDetails" [contacts]="contactDetails"></app-home>
+            <app-about-me id="about-me" [details]="aboutDetails" [skills]="skills"></app-about-me>
+            <app-projects id="projects" [projects]="projects"></app-projects>
+            <app-contact id="contact" [details]="contactDetails"></app-contact>
+            <app-footer></app-footer>
+        </div>
+    </ng-container>
+</ng-container>

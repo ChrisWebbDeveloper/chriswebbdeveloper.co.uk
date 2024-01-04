@@ -30,6 +30,8 @@ import { ContactDetails } from './models/contact-details';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  loading: boolean = true;
+  contentFound: boolean = false;
   homeDetails!: HomeDetails;
   aboutDetails!: AboutDetails;
   skills: Skill[] = [];
@@ -40,15 +42,19 @@ export class AppComponent {
   }
 
   ngOnInit() {
+    console.log(this.homeDetails);
+
     this.data.getData().subscribe({
       next: (val: Data) => {
+        this.loading = false;
+        this.contentFound = true;
         this.homeDetails = new HomeDetails(val.name, val.blurb);
         this.aboutDetails = new AboutDetails(val.about_me.long_form, val.title);
         this.skills = val.skills.map(skill => new Skill(skill));
         this.projects = val.projects.map(project => new Project(project));
         this.contactDetails = new ContactDetails(val.contact_details);
       },
-      error: err => alert('Content could not be found at this time. Please try again later.')
+      error: err => this.loading = false
     });
   }
 }

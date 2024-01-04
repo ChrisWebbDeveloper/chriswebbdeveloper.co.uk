@@ -3,10 +3,12 @@ $siteWhite: #fdfdfd;
 $siteBlack: #030816;
 $siteBlue: #61c7e0;
 $siteDarkBlue: #10698f;
+$siteRed: #c01526;
 
 $theme-colors: (
     "primary": $siteBlue,
     "secondary": $siteDarkBlue,
+    "danger": $siteRed,
     "light": $siteWhite,
     "dark": $siteBlack
 );
