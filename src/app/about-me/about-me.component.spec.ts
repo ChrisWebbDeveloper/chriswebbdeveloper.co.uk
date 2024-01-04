@@ -7,8 +7,8 @@ import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
 describe('AboutMeComponent', () => {
-    let component: AboutMeComponent;
     let fixture: ComponentFixture<AboutMeComponent>;
+    let component: AboutMeComponent;
     let title: string;
     const details: AboutDetails = new AboutDetails('Test about me\nstring', 'Test title');
     const skills: Skill[] = [

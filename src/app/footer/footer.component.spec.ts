@@ -3,8 +3,8 @@ import { FooterComponent } from './footer.component';
 import packageJson from '../../../package.json';
 
 describe('FooterComponent', () => {
-    let component: FooterComponent;
     let fixture: ComponentFixture<FooterComponent>;
+    let component: FooterComponent;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({

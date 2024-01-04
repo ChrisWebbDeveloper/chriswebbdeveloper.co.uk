@@ -4,10 +4,10 @@ import { HomeDetails } from '../models/home-details';
 import { ContactDetails } from '../models/contact-details';
 
 describe('HomeComponent', () => {
+    let fixture: ComponentFixture<HomeComponent>;
+    let component: HomeComponent;
     const details: HomeDetails = new HomeDetails('Name', 'Blurb');
     let contacts: ContactDetails;
-    let component: HomeComponent;
-    let fixture: ComponentFixture<HomeComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({

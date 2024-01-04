@@ -3,8 +3,8 @@ import { SkillsComponent } from './skills.component';
 import { Skill } from '../models/skill';
 
 describe('SkillsComponent', () => {
-    let component: SkillsComponent;
     let fixture: ComponentFixture<SkillsComponent>;
+    let component: SkillsComponent;
     let skills: Skill[];
     let sortSkillsSpy: jasmine.Spy;
 

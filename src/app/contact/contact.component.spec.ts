@@ -5,8 +5,8 @@ import { Cv } from '../models/cv';
 import { environment } from '../../environments/environment.development';
 
 describe('ContactComponent', () => {
-    let component: ContactComponent;
     let fixture: ComponentFixture<ContactComponent>;
+    let component: ContactComponent;
     let details: ContactDetails;
     let cv: Cv;
 
