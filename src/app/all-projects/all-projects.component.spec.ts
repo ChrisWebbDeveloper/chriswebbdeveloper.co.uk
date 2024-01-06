@@ -371,7 +371,7 @@ describe('AllProjectsComponent', () => {
             fixture.whenStable().then(() => {
                 const element: HTMLElement = fixture.nativeElement;
                 const inputs: NodeListOf<HTMLInputElement> = element.querySelectorAll('[aria-label="Tech List"] > input');
-                const selected: HTMLElement = Array.from(inputs).filter(x => x.checked)[0];
+                const selected: HTMLInputElement = Array.from(inputs).filter(x => x.checked)[0];
                 const label: HTMLElement | null = selected.parentElement!.querySelector(`label[for="${selected.id}"]`);
 
                 expect(label?.textContent).toEqual(component.selectedTech);
@@ -381,7 +381,7 @@ describe('AllProjectsComponent', () => {
         it(`should call the 'setSelectedTech()' method on clicking each button, passing in the Event and the relevant technology's name`, async () => {
             fixture.whenStable().then(() => {
                 const element: HTMLElement = fixture.nativeElement;
-                const labels: NodeListOf<HTMLInputElement> = element.querySelectorAll('[aria-label="Tech List"] > label');
+                const labels: NodeListOf<HTMLElement> = element.querySelectorAll('[aria-label="Tech List"] > label');
 
                 labels.forEach(label => {
                     setSelectedTechSpy.calls.reset();

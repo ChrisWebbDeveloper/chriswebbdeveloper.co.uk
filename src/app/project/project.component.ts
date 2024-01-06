@@ -13,9 +13,9 @@ import { CommonModule } from '@angular/common';
 })
 export class ProjectComponent {
   @Input() project!: Project;
-  @Input() selectedTech: string = 'all';
-  @Input() selectedTechMethod!: Function;
+  @Input() selectedTech: string = 'All';
   @Output() selectedTechChange = new EventEmitter<string>();
+  @Input() selectedTechMethod!: Function;
 
   setSelectedTech(event: Event, tech: string): void {
     this.selectedTechMethod(event, tech);
