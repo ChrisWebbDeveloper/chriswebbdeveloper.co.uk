@@ -146,7 +146,7 @@ describe('ProjectContainsTechPipe', () => {
     });
 
     it((`should return all the projects if tech is 'all'`), () => {
-        expect(pipe.transform(projects, 'all')).toEqual(projects);
+        expect(pipe.transform(projects, 'All')).toEqual(projects);
     });
 
     it((`should return the projects that include the specified tech in its 'techStack' property`), () => {

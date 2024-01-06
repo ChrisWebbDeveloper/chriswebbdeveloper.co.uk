@@ -20,7 +20,7 @@ import { ImageService } from '../services/image.service';
 export class AllProjectsComponent {
   @Input() projects!: Project[];
   techsList: string[] = [];
-  selectedTech: string = 'all';
+  selectedTech: string = 'All';
 
   constructor(private image: ImageService) {
   }
@@ -67,6 +67,6 @@ export class AllProjectsComponent {
   setSelectedTech(event: Event, tech: string): void {
     event.preventDefault();
     if (this.selectedTech != tech) this.selectedTech = tech;
-    else this.selectedTech = 'all';
+    else this.selectedTech = 'All';
   }
 }
