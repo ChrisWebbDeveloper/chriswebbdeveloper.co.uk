@@ -771,16 +771,12 @@ describe('AppComponent', () => {
         it(`should set 'loading' to false if 'getData()' fails`, () => {
             dataSpy.getData.and.returnValue(throwError(() => new Error('error')));
             app.ngOnInit();
-            fixture.detectChanges();
-
             expect(app.loading).toBeFalse();
         });
 
         it(`should set 'contentFound' to false if 'getData()' fails`, () => {
             dataSpy.getData.and.returnValue(throwError(() => new Error('error')));
             app.ngOnInit();
-            fixture.detectChanges();
-
             expect(app.contentFound).toBeFalse();
         });
     });
