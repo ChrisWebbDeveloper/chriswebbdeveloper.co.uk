@@ -15,7 +15,7 @@
 
 
 ## About the Project
-
+![chriswebbdeveloper co uk](https://github.com/ChrisWebbDeveloper/chriswebbdeveloper.co.uk/assets/19428849/82b8fb35-e375-4b92-8acd-d8dd4063e7c8)
 
 The third build for the chriswebbdeveloper.co.uk, a portfolio of my skills and projects. It has been built in an Angular App that links to the  Laravel backend with all properties set via seeding and migration scripts. An .env (ignored in this repo) is used that opts for a sqlite database.
 
