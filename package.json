@@ -9,7 +9,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:chriswebbdeveloper": "node dist/chriswebbdeveloper.co.uk/server/server.mjs"
+    "serve:ssr:chriswebbdeveloper.co.uk": "node dist/chriswebbdeveloper.co.uk/server/server.mjs"
   },
   "private": true,
   "dependencies": {
