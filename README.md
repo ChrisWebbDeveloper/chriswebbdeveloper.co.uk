@@ -17,11 +17,9 @@
 ## About the Project
 ![chriswebbdeveloper co uk](https://github.com/ChrisWebbDeveloper/chriswebbdeveloper.co.uk/assets/19428849/82b8fb35-e375-4b92-8acd-d8dd4063e7c8)
 
-The third build for the chriswebbdeveloper.co.uk, a portfolio of my skills and projects. It has been built in an Angular App that links to the  Laravel backend with all properties set via seeding and migration scripts. An .env (ignored in this repo) is used that opts for a sqlite database.
+The third build for the chriswebbdeveloper.co.uk, a portfolio of my skills and projects. It has been built in an Angular App that connects via a Data Service to [my CV repo](https://github.com/ChrisWebbDeveloper/cv) to retrieve data and generate page content. It also uses Server Side Rendering (Angular SSR) for indexing purposes to improve SEO performance.
 
-A React front end is used to build the web page, with each section isolated into suitable components. An API call is then used to retrieve these details and populate the relevant sections of the web page accordingly.
-
-It includes links to examples of learned technologies, as well as other websites that were built. At the bottom of the website is a contact form that utilises PHP script to send said emails to myself. This has utilised Twilio SendGrid to handle these calls.
+All content is separated via components, services, models and pipes to isolate functionality and plug in where required. Styling has been included via SASS.
 
 ### Tech Stack
 [![Angular](https://img.shields.io/badge/Laravel-f05340?style=for-the-badge&logo=laravel&logoColor=white)](https://laravel.com) &nbsp;
