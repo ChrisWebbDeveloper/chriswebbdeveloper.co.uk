@@ -8,7 +8,6 @@ describe('ProjectComponent', () => {
     let component: ProjectComponent;
     let project: Project;
     let eventEmitter: EventEmitter<string>;
-    const img: string = 'test_image.png';
     let selectedTechChangeSpy: jasmine.Spy;
     let selectedTechMethodSpy: jasmine.Spy;
     let setSelectedTechSpy: jasmine.Spy;
@@ -44,7 +43,6 @@ describe('ProjectComponent', () => {
             ]
         });
         component.project = project;
-        component.project.img = img;
 
         eventEmitter = new EventEmitter<string>();
         component.selectedTechChange = eventEmitter;
@@ -137,21 +135,22 @@ describe('ProjectComponent', () => {
 
             expect(getImg()).toBeTruthy();
 
-            component.project.img = undefined;
+            component.project.title = '';
             fixture.detectChanges();
             expect(getImg()).toBeNull();
         });
 
-        it(`should set the image's 'src' attribute to the project's 'img' (if it is available)`, () => {
+        it(`should set the image's 'src' attribute using the to the project's 'getImgUrl()' method`, () => {
             function getImg(): HTMLImageElement | null {
                 const element: HTMLElement = fixture.nativeElement;
                 return element.querySelector('img');
             };
 
-            expect(getImg()?.src.includes(`/${project.img!}`)).toBeTrue();
+            const partialUrl = component.project.getImgUrl().replace('../..', '');
+            expect(getImg()?.src.includes(partialUrl)).toBeTrue();
         });
 
-        it(`should give the image a suitable 'alt' attribute based on the project's title (if it is available)`, () => {
+        it(`should give the image a suitable 'alt' attribute based on the project's title`, () => {
             function getImg(): HTMLImageElement | null {
                 const element: HTMLElement = fixture.nativeElement;
                 return element.querySelector('img');

@@ -2,7 +2,6 @@ export class Project {
     title: string;
     description: string[];
     link?: string;
-    img?: string;
     startDate: Date;
     endDate?: Date;
     techStack: string[];
@@ -26,5 +25,11 @@ export class Project {
 
     getEndDateFormatted(): string {
         return this.endDate ? this.getDateFormatted(this.endDate) : 'Present';
+    }
+
+    getImgUrl(): string {
+        let fileName: string = this.title.toLowerCase().replaceAll(' ', '-').replaceAll('(', '').replaceAll(')', '')
+        if (fileName.length > 0) return `../../assets/images/${fileName}.jpg`;
+        else return '';
     }
 }

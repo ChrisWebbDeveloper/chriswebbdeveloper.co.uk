@@ -5,7 +5,6 @@ describe('Project', () => {
     const title: string = 'Title';
     const formattedDescription: string = 'This\nis\na\description';
     const link: string = 'link.com';
-    const img: string = 'img';
     const startDate: string = '2023-01-01';
     const endDate: string = '2023-12-31';
     const techStack: string[] = ['Tech 3', 'Tech 2', 'Tech 1'];
@@ -29,7 +28,6 @@ describe('Project', () => {
             tech_stack: techStack
         };
         project = new Project(projectObj);
-        project.img = img;
         //@ts-expect-error
         getDateFormattedSpy = spyOn(project, 'getDateFormatted').and.callThrough();
     });
@@ -83,21 +81,6 @@ describe('Project', () => {
 
         it(`should be set to the value provided in the constructor`, () => {
             expect(project.link).toEqual(link);
-        });
-    });
-
-    describe(`img`, () => {
-        it(`should be included as a property`, () => {
-            expect(project.img).toBeTruthy();
-        });
-
-        it(`should be undefined if not set`, () => {
-            project.img = undefined;
-            expect(project.img).toBeUndefined();
-        });
-
-        it(`should be set to the value provided`, () => {
-            expect(project.img).toEqual(img);
         });
     });
 
@@ -196,4 +179,21 @@ describe('Project', () => {
             expect(getDateFormattedSpy).toHaveBeenCalledOnceWith(project.endDate);
         });
     });
+
+    describe(`getImgUrl`, () => {
+        it(`should be included as a method`, () => {
+            expect(project.getImgUrl).toBeDefined();
+        });
+
+        it(`should take the given name, format it, and return the result with the image assets path and extension based on the currentIndex`, () => {
+            const val = project.title.toLowerCase().replaceAll(' ', '-').replaceAll('(', '').replace(')', '');
+            const imgUrlStr = `../../assets/images/${val}.jpg`;
+            expect(project.getImgUrl()).toEqual(imgUrlStr);
+        });
+
+        it(`should return an empty string if an empty string is provided`, () => {
+            project.title = '';
+            expect(project.getImgUrl()).toEqual('');
+        });
+    })
 });

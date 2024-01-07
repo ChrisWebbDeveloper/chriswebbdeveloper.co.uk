@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { ProjectComponent } from '../project/project.component';
 import { ProjectContainsTechPipe } from '../pipes/project-contains-tech.pipe';
 import { Project } from '../models/project';
-import { ImageService } from '../services/image.service';
 
 @Component({
   selector: 'app-all-projects',
@@ -22,21 +21,9 @@ export class AllProjectsComponent {
   techsList: string[] = [];
   selectedTech: string = 'All';
 
-  constructor(private image: ImageService) {
-  }
-
   ngOnInit() {
-    this.getProjectImages();
     this.sortProjects();
     this.getTechsList();
-  }
-
-  getProjectImages(): void {
-    this.projects.forEach(project => {
-      this.image.getImage(project.title).subscribe({
-        next: val => project.img = val
-      });
-    });
   }
 
   sortProjects(): void {

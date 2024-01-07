@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AllProjectsComponent } from './all-projects.component';
-import { ImageService } from '../services/image.service';
 import { of } from 'rxjs';
 import { Project } from '../models/project';
 import { ProjectComponent } from '../project/project.component';
@@ -10,25 +9,16 @@ import { DebugElement } from '@angular/core';
 describe('AllProjectsComponent', () => {
     let fixture: ComponentFixture<AllProjectsComponent>;
     let component: AllProjectsComponent;
-    let imageSpy: jasmine.SpyObj<ImageService>;
-    const img: string = 'test_image.jpg';
     let projects: Project[];
     let techsList: string[];
-    let getProjectImagesSpy: jasmine.Spy;
     let sortProjectsSpy: jasmine.Spy;
     let getTechsListSpy: jasmine.Spy;
     let setSelectedTechSpy: jasmine.Spy;
     let eventSpy: jasmine.SpyObj<Event>;
 
     beforeEach(async () => {
-        imageSpy = jasmine.createSpyObj(ImageService, ['getImage']);
-        imageSpy.getImage.and.returnValue(of(img));
-
         await TestBed.configureTestingModule({
-            imports: [AllProjectsComponent],
-            providers: [
-                {provide: ImageService, useValue: imageSpy}
-            ]
+            imports: [AllProjectsComponent]
         })
         .compileComponents();
 
@@ -196,7 +186,6 @@ describe('AllProjectsComponent', () => {
             "WordPress",
         ];
         component.projects = projects;
-        getProjectImagesSpy = spyOn(component, 'getProjectImages').and.callThrough();
         sortProjectsSpy = spyOn(component, 'sortProjects').and.callThrough();
         getTechsListSpy = spyOn(component, 'getTechsList').and.callThrough();
         setSelectedTechSpy = spyOn(component, 'setSelectedTech').and.callThrough();
@@ -249,43 +238,12 @@ describe('AllProjectsComponent', () => {
             component.ngOnInit();
         });
 
-        it(`should call the 'getProjectImages()' method`, () => {
-            expect(getProjectImagesSpy).toHaveBeenCalledTimes(1);
-        });
-
         it(`should call the 'sortProjects()' method`, () => {
             expect(sortProjectsSpy).toHaveBeenCalledTimes(1);
         });
 
         it(`should call the 'getTechsList()' method`, () => {
             expect(getTechsListSpy).toHaveBeenCalledTimes(1);
-        });
-    });
-
-    describe(`getProjectImages`, () => {
-        it(`should call the ImageService's 'getImage()' method for each project in the 'projects' property`, () => {
-            component.getProjectImages();
-            expect(imageSpy.getImage).toHaveBeenCalledTimes(component.projects.length);
-        });
-
-        it(`should pass in the project's title to the ImageService's 'getImage()' method`, () => {
-            component.getProjectImages();
-            component.projects.forEach(project => {
-                expect(imageSpy.getImage).toHaveBeenCalledWith(project.title);
-            });
-        });
-
-        it(`should set the value from the ImageService's 'getImage()' method to each project's 'img' property`, () => {
-            component.projects.forEach(project => {
-                expect(project.img).toBeUndefined();
-            });
-
-            component.getProjectImages();
-            fixture.detectChanges();
-
-            component.projects.forEach(project => {
-                expect(project.img).toEqual(img);
-            });
         });
     });
 

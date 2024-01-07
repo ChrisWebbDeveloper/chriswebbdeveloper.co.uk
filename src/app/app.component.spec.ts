@@ -8,7 +8,6 @@ import { Skill } from './models/skill';
 import { Project } from './models/project';
 import { ContactDetails } from './models/contact-details';
 import { of, throwError } from 'rxjs';
-import { ImageService } from './services/image.service';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { HeaderComponent } from './header/header.component';
@@ -22,7 +21,6 @@ describe('AppComponent', () => {
     let fixture: ComponentFixture<AppComponent>;
     let app: AppComponent;
     let dataSpy: jasmine.SpyObj<DataService>;
-    let imageSpy: jasmine.SpyObj<ImageService>;
 
     function sortSkills(skills: Skill[]): Skill[] {
         return skills.sort((a, b) => a.name < b.name ? -1 : a.exp < b.exp ? -1 : 1);
@@ -615,14 +613,10 @@ describe('AppComponent', () => {
         dataSpy = jasmine.createSpyObj(DataService, ['getData']);
         dataSpy.getData.and.returnValue(of(data));
 
-        imageSpy = jasmine.createSpyObj(ImageService, ['getImage']);
-        imageSpy.getImage.and.returnValue(of());
-
         await TestBed.configureTestingModule({
             imports: [AppComponent],
             providers: [
-                {provide: DataService, useValue: dataSpy},
-                {provide: ImageService, useValue: imageSpy}
+                {provide: DataService, useValue: dataSpy}
             ]
         }).compileComponents();
 
