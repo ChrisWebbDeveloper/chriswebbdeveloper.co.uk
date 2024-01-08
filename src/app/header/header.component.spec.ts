@@ -52,7 +52,7 @@ describe('HeaderComponent', () => {
             const element: HTMLElement = fixture.nativeElement;
             const navbarBrand: HTMLElement | null = element.querySelector('.navbar-brand')
             const img: HTMLImageElement | null = navbarBrand ? navbarBrand.querySelector('img') : null;
-            expect(img?.alt).toEqual('Chris Webb Developer');
+            expect(img?.alt).toEqual('Logo');
         });
 
         it(`should include 'Chris Webb Developer' text in the navbar brand`, () => {
