@@ -5,7 +5,7 @@
         <div *ngFor="let skill of skills" class="col-12 col-md-6 col-xl-4">
             <p class="mb-0">{{skill.name}}</p>
             <div class="progress">
-                <div class="progress-bar bg-primary" role="progressbar" [style]="'width: ' + skill.exp + '%'" [attr.aria-valuenow]=skill.exp aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar bg-primary" role="progressbar" [style]="'width: ' + skill.exp + '%'" [attr.aria-valuenow]=skill.exp aria-valuemin="0" aria-valuemax="100" [attr.aria-label]="skill.name"></div>
             </div>
         </div>
     </div>
