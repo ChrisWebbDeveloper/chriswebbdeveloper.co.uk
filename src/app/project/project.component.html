@@ -1,5 +1,5 @@
 <div class="row mt-4">
-    <div class="col-12 col-lg-6"><img *ngIf="project.getImgUrl().length > 0" [src]="project.getImgUrl()" [alt]="project.title" class="mb-4 mb-lg-0"></div>
+    <div class="col-12 col-lg-6"><img *ngIf="project.getImgUrl().length > 0" [src]="project.getImgUrl()" [alt]="project.title + ' Image'" class="mb-4 mb-lg-0"></div>
     <div class="col-12 col-lg-6">
         <div class="text-primary">
             <h3>{{project.title}}</h3>

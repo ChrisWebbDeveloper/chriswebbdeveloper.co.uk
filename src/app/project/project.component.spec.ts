@@ -156,7 +156,7 @@ describe('ProjectComponent', () => {
                 return element.querySelector('img');
             };
 
-            expect(getImg()?.alt).toEqual(project.title);
+            expect(getImg()?.alt).toEqual(`${project.title} Image`);
         });
 
         it(`should include the project's 'title' property as a title on the component`, () => {

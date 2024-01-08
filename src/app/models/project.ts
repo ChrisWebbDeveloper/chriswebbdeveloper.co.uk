@@ -29,7 +29,7 @@ export class Project {
 
     getImgUrl(): string {
         let fileName: string = this.title.toLowerCase().replaceAll(' ', '-').replaceAll('(', '').replaceAll(')', '')
-        if (fileName.length > 0) return `../../assets/images/${fileName}.avif`;
+        if (fileName.length > 0) return `../../assets/images/${fileName}.webp`;
         else return '';
     }
 }
