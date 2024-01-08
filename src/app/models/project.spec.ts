@@ -187,7 +187,7 @@ describe('Project', () => {
 
         it(`should take the given name, format it, and return the result with the image assets path and extension based on the currentIndex`, () => {
             const val = project.title.toLowerCase().replaceAll(' ', '-').replaceAll('(', '').replace(')', '');
-            const imgUrlStr = `../../assets/images/${val}.jpg`;
+            const imgUrlStr = `../../assets/images/${val}.avif`;
             expect(project.getImgUrl()).toEqual(imgUrlStr);
         });
 
