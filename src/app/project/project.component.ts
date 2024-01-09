@@ -1,12 +1,13 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Project } from '../models/project';
-import { CommonModule } from '@angular/common';
+import { CommonModule, IMAGE_CONFIG, NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-project',
   standalone: true,
   imports: [
-    CommonModule
+    CommonModule,
+    NgOptimizedImage
   ],
   templateUrl: './project.component.html',
   styleUrl: './project.component.scss'

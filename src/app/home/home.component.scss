@@ -5,13 +5,17 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-
-    $filteredBlack: rgba($siteBlack, 0.85);
-    
-    background: linear-gradient($filteredBlack, $filteredBlack), url("../../assets/images/home-background.webp");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-
+    position: relative;
     color: $siteWhite;
+    background-color: $siteBlack;
+
+    div {
+        z-index: 1;
+    }
+
+    img {
+        object-fit: cover;
+        position: absolute;
+        opacity: 0.15;
+    }
 }
