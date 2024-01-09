@@ -179,5 +179,24 @@ describe('HomeComponent', () => {
             const github: HTMLAnchorElement = contactsElem.querySelectorAll('a')[2];
             expect(github.href).toEqual(`https://github.com/${contacts.github}`);
         });
+
+        it(`should include an image to be used as the background`, () => {
+            const element: HTMLElement = fixture.nativeElement;
+            const img: HTMLImageElement | null = element.querySelector('img');
+            expect(img).toBeTruthy();
+        });
+
+
+        it(`should set the image's 'src' attribute to a suitable image link`, () => {
+            const element: HTMLElement = fixture.nativeElement;
+            const img: HTMLImageElement | null = element.querySelector('img');
+            expect(img?.src.includes('/assets/images/home-background.webp')).toBeTrue();
+        });
+
+        it(`should give the image a suitable 'alt' attribute based on the project's title`, () => {
+            const element: HTMLElement = fixture.nativeElement;
+            const img: HTMLImageElement | null = element.querySelector('img');
+            expect(img?.alt).toEqual('Background');
+        });
     });
 });
