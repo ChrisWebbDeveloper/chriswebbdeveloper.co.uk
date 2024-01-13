@@ -15,7 +15,7 @@
 
 
 ## About the Project
-![chriswebbdeveloper co uk](https://github.com/ChrisWebbDeveloper/chriswebbdeveloper.co.uk/assets/19428849/82b8fb35-e375-4b92-8acd-d8dd4063e7c8)
+![chris-webb-developer-v3](https://github.com/ChrisWebbDeveloper/chriswebbdeveloper.co.uk/assets/19428849/6e800d97-6eda-4115-b7b5-7569f36bdd71)
 
 The third build for the chriswebbdeveloper.co.uk, a portfolio of my skills and projects. It has been built in an Angular App that connects via a Data Service to [my CV repo](https://github.com/ChrisWebbDeveloper/cv) to retrieve data and generate page content. It also uses Server Side Rendering (Angular SSR) for indexing purposes to improve SEO performance.
 
